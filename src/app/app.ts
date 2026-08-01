@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { BrandIconService } from './core/theme/brand-icon.service';
+import { AppShellComponent } from './shared/layout/app-shell/app-shell.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [AppShellComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  private readonly brandIconService = inject(BrandIconService);
 }

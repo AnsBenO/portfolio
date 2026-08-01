@@ -1,0 +1,194 @@
+{
+  "basics": {
+    "name": "Anass Benomar",
+    "title": "Full Stack Developer",
+    "role": "Full Stack Developer",
+    "phone": "+212 718885366",
+    "email": "anass-ben-omar@outlook.com",
+    "location": {
+      "city": "Tetouan",
+      "country": "Morocco"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "anass-ben-omar-159374274",
+        "url": "https://linkedin.com/in/anass-ben-omar-159374274/"
+      },
+      {
+        "network": "GitHub",
+        "username": "AnsBenO",
+        "url": "https://github.com/AnsBenO"
+      }
+    ],
+    "summary": "Full Stack Developer with experience in building, optimizing, and maintaining enterprise-grade applications. Experienced in building robust business features using Spring Boot, Angular, SQL, and REST APIs, as well as conducting deep-dive incident investigations, executing root cause analysis (RCA), and collaborating across cross-functional development and operations teams to ensure high application availability."
+  },
+  "work": [
+    {
+      "company": "NTT DATA",
+      "position": "Full Stack Developer and DevOps Engineer",
+      "location": "Tetouan, Morocco",
+      "startDate": "2024-05-01",
+      "endDate": "2026-06-10",
+      "projects": [
+        {
+          "name": "Transport Hub – Vehicle Management App",
+          "description": "Enterprise web application for fleet and transport operations",
+          "environment": "Agile (Kanban)",
+          "startDate": "2026-03-25",
+          "endDate": "2026-06-10",
+          "highlights": [
+            "Built application features using Spring Boot, Angular, and PrimeNG that enabled vehicle tracking, fleet management, real-time location updates and availability calendar.",
+            "Resolved cross-stack defects in the frontend and backend layers, ensuring application reliability and user workflows."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG"]
+        },
+        {
+          "name": "TIM AM – TIM BUSINESS",
+          "description": "Junior DevOps Engineer responsibilities within NTT DATA",
+          "startDate": "2025-02-07",
+          "endDate": "2026-03-25",
+          "highlights": [
+            "Monitored production systems, investigated incidents using Kibana and application logs to identify root causes, and collaborated with infrastructure and development teams to restore service quickly.",
+            "Managed containerized applications on Google Cloud Platform (GCP) using Google Kubernetes Engine (GKE), monitoring and troubleshooting services to maintain high system availability.",
+            "Performed infrastructure maintenance, including SSL certificate renewals, cache management, and file system optimization, to ensure uninterrupted service.",
+            "Executed and maintained CI/CD deployments for backend microservices through Jenkins pipelines, ensuring deployment reliability.",
+            "Deployed Adobe Experience Manager (AEM) applications using CRX Package Manager to seamlessly roll out targeted application and digital content updates.",
+            "Designed and developed a standalone Java desktop automation tool that extracted Excel reports, cutting manual daily and weekly reporting effort for the team."
+          ],
+          "technologies": ["GCP", "GKE", "Kibana", "Jenkins", "Adobe Experience Manager", "Java"]
+        },
+        {
+          "name": "Kafaa'at – Employee Management App",
+          "description": "Internal employee and project management platform",
+          "environment": "Agile (Kanban)",
+          "startDate": "2024-09-04",
+          "endDate": "2025-02-07",
+          "highlights": [
+            "Developed employee profile, project tracking, and resource pool management modules using Spring Boot, Angular, and PrimeNG, delivering responsive and mobile-friendly user interfaces.",
+            "Investigated and resolved full-stack defects across frontend and backend layers, improving application reliability and streamlining user workflows.",
+            "Managed Flyway database migrations, evolving relational database schemas to support new business requirements while ensuring data integrity.",
+            "Increased backend unit test coverage to over 80% using JUnit and Mockito, reducing regression risks and improving code quality before production releases."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
+        },
+        {
+          "name": "CV APP – Resume Management Application",
+          "description": "Resume data transformation and persistence module",
+          "startDate": "2024-05-01",
+          "endDate": "2024-05-31",
+          "highlights": [
+            "Designed a normalized database schema and UML entity model to ensure consistent storage of employee profiles and qualifications.",
+            "Implemented Java functionality to persist resume data, enabling employees to generate standardized Europass resumes."
+          ],
+          "technologies": ["Java", "UML", "Database Design"]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "ENSA Tetouan",
+      "location": "Tetouan, Morocco",
+      "studyType": "Software Engineering and Web Development (DCA)",
+      "startDate": "2026-02-01",
+      "endDate": "current"
+    },
+    {
+      "institution": "Specialized Institute of Offshoring Professions (ISMO)",
+      "location": "Tetouan, Morocco",
+      "studyType": "Specialized Technician in Digital Development",
+      "startDate": "2021-11-30",
+      "endDate": "2023-11-30"
+    }
+  ],
+  "training": [
+    {
+      "name": "ANGULAR LEVEL II: MEDIUM",
+      "provider": "NTT DATA – Knowledge Bridge Center",
+      "startDate": "2026-02-17",
+      "endDate": "2026-04-08",
+      "highlights": [
+        "Advanced Angular development including Angular Signals, RxJS, Reactive Forms, Lazy Loading, Route Guards, HTTP Interceptors, and Dependency Injection."
+      ]
+    },
+    {
+      "name": "Generative AI Training",
+      "provider": "NTT DATA – Knowledge Bridge Center",
+      "date": "2026-04-08",
+      "highlights": ["Prompt engineering and API integration for generative AI applications."]
+    },
+    {
+      "name": "Java Trainee Program (Becario)",
+      "provider": "NTT DATA",
+      "location": "Tetouan, Morocco",
+      "startDate": "2024-09-14",
+      "endDate": "2024-12-20",
+      "highlights": [
+        "Enterprise Java development with Core Java, Jakarta EE, Spring Framework, and Spring Boot."
+      ]
+    },
+    {
+      "name": "Proyecto Cole",
+      "provider": "NTT DATA – Cervantes – ISMO",
+      "location": "Tetouan, Morocco",
+      "startDate": "2023-12-31",
+      "endDate": "2024-04-30",
+      "highlights": ["Spanish language training."]
+    }
+  ],
+  "skills": {
+    "programmingLanguages": [
+      "Java",
+      "PHP",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Python",
+      "HTML5",
+      "CSS3"
+    ],
+    "backend": [
+      "Spring Boot",
+      "REST APIs",
+      "Jakarta EE",
+      "JUnit",
+      "Mockito",
+      "NodeJS (Express.js)"
+    ],
+    "frontend": ["Angular", "React", "Thymeleaf", "HTMX"],
+    "databases": ["PostgreSQL", "Oracle Database", "MySQL"],
+    "devOpsAndTools": [
+      "Git",
+      "Maven",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Kibana",
+      "Linux CLI",
+      "Google Kubernetes Engine (GKE)",
+      "Google Cloud Platform (GCP)"
+    ],
+    "projectManagement": ["Jira", "Agile", "Scrum", "Kanban"],
+    "architectureAndDesign": [
+      "Object-Oriented Programming (OOP)",
+      "Design Patterns",
+      "UML Modeling",
+      "Database Design",
+      "Microservices Architecture"
+    ],
+    "maintenanceAndTriaging": [
+      "Incident Investigation",
+      "Root Cause Analysis (RCA)",
+      "Log Analysis",
+      "Application Monitoring",
+      "Troubleshooting"
+    ]
+  },
+  "languages": [
+    { "language": "Arabic", "fluency": "Native" },
+    { "language": "English", "fluency": "Full Professional Proficiency (C1)" },
+    { "language": "French", "fluency": "Professional Working Proficiency (B2)" },
+    { "language": "Spanish", "fluency": "Professional Working Proficiency (B1)" }
+  ]
+}

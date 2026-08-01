@@ -1,0 +1,77 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+
+  // Bridge Material system variables to app-level semantic tokens.
+  --mat-sys-surface: hsl(var(--surface-1));
+  --mat-sys-surface-container: hsl(var(--surface-2));
+  --mat-sys-surface-container-high: hsl(var(--surface-3));
+  --mat-sys-on-surface: hsl(var(--text-1));
+  --mat-sys-on-surface-variant: hsl(var(--text-2));
+  --mat-sys-outline: hsl(var(--border-1));
+  --mat-sys-primary: hsl(var(--brand-1));
+  --mat-sys-secondary: hsl(var(--brand-2));
+  --mat-sys-error: hsl(var(--critical-1));
+  --mat-sidenav-content-background-color: #f3f3f300;
+}
+
+html.dark {
+  @include mat.theme(
+    (
+      color: (
+        theme-type: dark,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+}
+
+/* Drawer itself: break out of container sizing, pin to viewport */
+.mat-drawer-container .glass-drawer.mat-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: 100vh !important;
+}
+
+/* Backdrop: Material draws this *inside* the container by default,
+   so it only covers the container's height. Force it to cover the viewport too. */
+.mat-drawer-container .mat-drawer-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
