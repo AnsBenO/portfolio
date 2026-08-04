@@ -1,0 +1,13 @@
+<section id="skills" class="section-screen section-anchor">
+      <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
+            <ui-section-header eyebrow="Capabilities" title="Skills Overview"
+                  subtitle="Cross-functional strengths with depth in frontend architecture."></ui-section-header>
+            <div class="mt-6">
+                  <ui-grid columns="two" gap="6">
+                        @for (category of skillCategories(); track category.id) {
+                        <content-skill-category [category]="category"></content-skill-category>
+                        }
+                  </ui-grid>
+            </div>
+      </ui-section-container>
+</section>

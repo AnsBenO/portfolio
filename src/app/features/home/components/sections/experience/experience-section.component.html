@@ -1,0 +1,11 @@
+<section id="experience" class="section-screen section-anchor">
+      <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
+            <ui-section-header eyebrow="Career" title="Experience Highlights"
+                  subtitle="Recent roles with measurable product and engineering impact."></ui-section-header>
+            <div class="mt-6 grid gap-6">
+                  @for (item of experienceHighlights(); track item.id) {
+                  <content-experience-card [experience]="item"></content-experience-card>
+                  }
+            </div>
+      </ui-section-container>
+</section>

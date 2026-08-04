@@ -3,7 +3,6 @@
     "name": "Anass Benomar",
     "title": "Full Stack Developer",
     "role": "Full Stack Developer",
-    "phone": "+212 718885366",
     "email": "anass-ben-omar@outlook.com",
     "location": {
       "city": "Tetouan",
@@ -21,7 +20,7 @@
         "url": "https://github.com/AnsBenO"
       }
     ],
-    "summary": "Full Stack Developer with experience in building, optimizing, and maintaining enterprise-grade applications. Experienced in building robust business features using Spring Boot, Angular, SQL, and REST APIs, as well as conducting deep-dive incident investigations, executing root cause analysis (RCA), and collaborating across cross-functional development and operations teams to ensure high application availability."
+    "summary": "Full Stack Developer with experience in building, optimizing, and maintaining enterprise-grade applications. Experienced in building robust business features using Spring Boot, Angular, SQL, and Representational State Transfer (REST) APIs, as well as conducting deep-dive incident investigations, performing Root Cause Analysis (RCA), and collaborating across cross-functional development and operations teams to ensure high application availability."
   },
   "work": [
     {
@@ -33,42 +32,49 @@
       "projects": [
         {
           "name": "Transport Hub – Vehicle Management App",
-          "description": "Enterprise web application for fleet and transport operations",
+          "description": "Enterprise fleet and transport management platform",
           "environment": "Agile (Kanban)",
-          "startDate": "2026-03-25",
-          "endDate": "2026-06-10",
+          "startDate": "",
+          "endDate": "",
           "highlights": [
-            "Built application features using Spring Boot, Angular, and PrimeNG that enabled vehicle tracking, fleet management, real-time location updates and availability calendar.",
-            "Resolved cross-stack defects in the frontend and backend layers, ensuring application reliability and user workflows."
+            "Developed enterprise fleet management features using Spring Boot, Angular, and PrimeNG, enabling scheduled reporting emails, user reservation action tracking, and real-time vehicle availability management.",
+            "Resolved frontend and backend issues across the application stack, improving reliability and user experience."
           ],
           "technologies": ["Spring Boot", "Angular", "PrimeNG"]
         },
         {
           "name": "TIM AM – TIM BUSINESS",
-          "description": "Junior DevOps Engineer responsibilities within NTT DATA",
+          "description": "Production support and DevOps activities for enterprise applications",
           "startDate": "2025-02-07",
           "endDate": "2026-03-25",
           "highlights": [
-            "Monitored production systems, investigated incidents using Kibana and application logs to identify root causes, and collaborated with infrastructure and development teams to restore service quickly.",
-            "Managed containerized applications on Google Cloud Platform (GCP) using Google Kubernetes Engine (GKE), monitoring and troubleshooting services to maintain high system availability.",
-            "Performed infrastructure maintenance, including SSL certificate renewals, cache management, and file system optimization, to ensure uninterrupted service.",
-            "Executed and maintained CI/CD deployments for backend microservices through Jenkins pipelines, ensuring deployment reliability.",
-            "Deployed Adobe Experience Manager (AEM) applications using CRX Package Manager to seamlessly roll out targeted application and digital content updates.",
-            "Designed and developed a standalone Java desktop automation tool that extracted Excel reports, cutting manual daily and weekly reporting effort for the team."
+            "Ensured production stability by monitoring applications, analyzing incidents with Kibana and logs, and collaborating with teams to resolve service issues.",
+            "Maintained cloud-based applications on Google Cloud Platform (GCP) and Google Kubernetes Engine (GKE), troubleshooting containerized services and supporting high availability.",
+            "Improved operational reliability through infrastructure maintenance, Secure Sockets Layer (SSL) certificate renewals, cache optimization, and system improvements.",
+            "Supported reliable backend microservice releases through Jenkins Continuous Integration and Continuous Deployment (CI/CD) pipelines.",
+            "Delivered Adobe Experience Manager (AEM) application and content updates using CRX Package Manager.",
+            "Automated Excel reporting workflows with a Java desktop tool, reducing repetitive manual tasks for the team."
           ],
-          "technologies": ["GCP", "GKE", "Kibana", "Jenkins", "Adobe Experience Manager", "Java"]
+          "technologies": [
+            "Google Cloud Platform (GCP)",
+            "Google Kubernetes Engine (GKE)",
+            "Kubernetes",
+            "Jenkins",
+            "Kibana",
+            "Java",
+            "Adobe Experience Manager (AEM)"
+          ]
         },
         {
           "name": "Kafaa'at – Employee Management App",
           "description": "Internal employee and project management platform",
           "environment": "Agile (Kanban)",
-          "startDate": "2024-09-04",
-          "endDate": "2025-02-07",
+          "startDate": "",
+          "endDate": "",
           "highlights": [
-            "Developed employee profile, project tracking, and resource pool management modules using Spring Boot, Angular, and PrimeNG, delivering responsive and mobile-friendly user interfaces.",
-            "Investigated and resolved full-stack defects across frontend and backend layers, improving application reliability and streamlining user workflows.",
-            "Managed Flyway database migrations, evolving relational database schemas to support new business requirements while ensuring data integrity.",
-            "Increased backend unit test coverage to over 80% using JUnit and Mockito, reducing regression risks and improving code quality before production releases."
+            "Developed employee management, project tracking, and resource pool modules using Spring Boot, Angular, and PrimeNG.",
+            "Built responsive user interfaces and improved business workflows through full-stack development.",
+            "Enhanced backend test coverage to over 80% by implementing JUnit and Mockito unit tests, leveraging AI-assisted development to improve test creation efficiency and maintain code quality."
           ],
           "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
         },
@@ -78,83 +84,43 @@
           "startDate": "2024-05-01",
           "endDate": "2024-05-31",
           "highlights": [
-            "Designed a normalized database schema and UML entity model to ensure consistent storage of employee profiles and qualifications.",
+            "Designed a normalized database schema and Unified Modeling Language (UML) entity model to ensure consistent storage of employee profiles and qualifications.",
             "Implemented Java functionality to persist resume data, enabling employees to generate standardized Europass resumes."
           ],
-          "technologies": ["Java", "UML", "Database Design"]
+          "technologies": ["Java", "Unified Modeling Language (UML)", "Database Design"]
         }
       ]
     }
   ],
-  "education": [
+  "projects": [
     {
-      "institution": "ENSA Tetouan",
-      "location": "Tetouan, Morocco",
-      "studyType": "Software Engineering and Web Development (DCA)",
-      "startDate": "2026-02-01",
-      "endDate": "current"
+      "id": "sql-tutor-web",
+      "title": "SQL Tutor Web",
+      "thumbnailUrl": "sql-tutor.png",
+      "sourceUrl": "https://github.com/AnsBenO/sql-tutor-web"
     },
     {
-      "institution": "Specialized Institute of Offshoring Professions (ISMO)",
-      "location": "Tetouan, Morocco",
-      "studyType": "Specialized Technician in Digital Development",
-      "startDate": "2021-11-30",
-      "endDate": "2023-11-30"
-    }
-  ],
-  "training": [
-    {
-      "name": "ANGULAR LEVEL II: MEDIUM",
-      "provider": "NTT DATA – Knowledge Bridge Center",
-      "startDate": "2026-02-17",
-      "endDate": "2026-04-08",
-      "highlights": [
-        "Advanced Angular development including Angular Signals, RxJS, Reactive Forms, Lazy Loading, Route Guards, HTTP Interceptors, and Dependency Injection."
-      ]
+      "id": "story-corner",
+      "title": "Story Corner",
+      "thumbnailUrl": "story-corner.png",
+      "sourceUrl": "https://github.com/AnsBenO/story-corner"
     },
     {
-      "name": "Generative AI Training",
-      "provider": "NTT DATA – Knowledge Bridge Center",
-      "date": "2026-04-08",
-      "highlights": ["Prompt engineering and API integration for generative AI applications."]
-    },
-    {
-      "name": "Java Trainee Program (Becario)",
-      "provider": "NTT DATA",
-      "location": "Tetouan, Morocco",
-      "startDate": "2024-09-14",
-      "endDate": "2024-12-20",
-      "highlights": [
-        "Enterprise Java development with Core Java, Jakarta EE, Spring Framework, and Spring Boot."
-      ]
-    },
-    {
-      "name": "Proyecto Cole",
-      "provider": "NTT DATA – Cervantes – ISMO",
-      "location": "Tetouan, Morocco",
-      "startDate": "2023-12-31",
-      "endDate": "2024-04-30",
-      "highlights": ["Spanish language training."]
+      "id": "cinema",
+      "title": "Cinema",
+      "thumbnailUrl": "cinema.png",
+      "sourceUrl": "https://github.com/AnsBenO/cinema"
     }
   ],
   "skills": {
-    "programmingLanguages": [
-      "Java",
-      "PHP",
-      "TypeScript",
-      "JavaScript",
-      "SQL",
-      "Python",
-      "HTML5",
-      "CSS3"
-    ],
+    "programmingLanguages": ["Java", "TypeScript", "JavaScript", "SQL", "Python", "HTML5", "CSS3"],
     "backend": [
       "Spring Boot",
-      "REST APIs",
+      "Representational State Transfer (REST) APIs",
       "Jakarta EE",
       "JUnit",
       "Mockito",
-      "NodeJS (Express.js)"
+      "Node.js (Express.js)"
     ],
     "frontend": ["Angular", "React", "Thymeleaf", "HTMX"],
     "databases": ["PostgreSQL", "Oracle Database", "MySQL"],
@@ -165,7 +131,7 @@
       "Kubernetes",
       "Jenkins",
       "Kibana",
-      "Linux CLI",
+      "Linux Command Line Interface (CLI)",
       "Google Kubernetes Engine (GKE)",
       "Google Cloud Platform (GCP)"
     ],
@@ -173,7 +139,7 @@
     "architectureAndDesign": [
       "Object-Oriented Programming (OOP)",
       "Design Patterns",
-      "UML Modeling",
+      "Unified Modeling Language (UML) Modeling",
       "Database Design",
       "Microservices Architecture"
     ],
@@ -186,9 +152,21 @@
     ]
   },
   "languages": [
-    { "language": "Arabic", "fluency": "Native" },
-    { "language": "English", "fluency": "Full Professional Proficiency (C1)" },
-    { "language": "French", "fluency": "Professional Working Proficiency (B2)" },
-    { "language": "Spanish", "fluency": "Professional Working Proficiency (B2)" }
+    {
+      "language": "Arabic",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Full Professional Proficiency (C1)"
+    },
+    {
+      "language": "French",
+      "fluency": "Professional Working Proficiency (B2)"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Professional Working Proficiency (B2)"
+    }
   ]
 }

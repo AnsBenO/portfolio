@@ -1,35 +1,32 @@
 import { AfterViewInit, Component, OnDestroy, inject } from '@angular/core';
 import { SectionSpyService } from '../../core/services/section-spy.service';
 import { PageContainerComponent } from '../../shared/layout/page-container/page-container.component';
-import { AboutSectionComponent } from './components/sections/about-section.component';
-import { ContactSectionComponent } from './components/sections/contact-section.component';
-import { EducationSectionComponent } from './components/sections/education-section.component';
-import { ExperienceSectionComponent } from './components/sections/experience-section.component';
-import { HomeSectionComponent } from './components/sections/home-section.component';
-import { LanguagesSectionComponent } from './components/sections/languages-section.component';
-import { SkillsSectionComponent } from './components/sections/skills-section.component';
-import { TrainingSectionComponent } from './components/sections/training-section.component';
+import { AboutSectionComponent } from './components/sections/about/about-section.component';
+import { ExperienceSectionComponent } from './components/sections/experience/experience-section.component';
+import { ProjectsSectionComponent } from './components/sections/projects/projects-section.component';
+import { SkillsSectionComponent } from './components/sections/skills/skills-section.component';
+import { LanguagesSectionComponent } from './components/sections/languages/languages-section.component';
+import { ContactSectionComponent } from './components/sections/contact/contact-section.component';
+import { IntroSectionComponent } from './components/sections/intro/intro-section.component';
 
 @Component({
   selector: 'page-home',
   imports: [
     PageContainerComponent,
-    HomeSectionComponent,
+    IntroSectionComponent,
     AboutSectionComponent,
     ExperienceSectionComponent,
-    EducationSectionComponent,
-    TrainingSectionComponent,
+    ProjectsSectionComponent,
     SkillsSectionComponent,
     LanguagesSectionComponent,
     ContactSectionComponent,
   ],
   template: `
     <ui-page-container spacing="spacious" maxWidth="6xl">
-      <home-section></home-section>
+      <intro-section></intro-section>
       <about-section></about-section>
       <experience-section></experience-section>
-      <education-section></education-section>
-      <training-section></training-section>
+      <projects-section></projects-section>
       <skills-section></skills-section>
       <languages-section></languages-section>
       <contact-section></contact-section>
@@ -43,6 +40,7 @@ export class HomePage implements AfterViewInit, OnDestroy {
     'home',
     'about',
     'experience',
+    'projects',
     'education',
     'training',
     'skills',

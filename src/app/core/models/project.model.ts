@@ -1,11 +1,15 @@
+export type ProjectCategory = 'web' | 'mobile' | 'api' | 'platform';
+
 export interface Project {
   id: string;
   title: string;
-  summary: string;
-  description: string;
-  category: 'web' | 'mobile' | 'api' | 'platform';
+  thumbnailUrl?: string;
+  summary?: string;
+  description?: string;
+  category?: ProjectCategory;
   technologies: string[];
-  featured: boolean;
+
+  featured?: boolean;
   liveUrl?: string;
   sourceUrl?: string;
 }

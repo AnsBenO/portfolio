@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { Experience } from '../models/experience.model';
+import { Project } from '../models/project.model';
 import {
   PortfolioBasics,
   PortfolioData,
   PortfolioEducation,
   PortfolioLanguage,
+  PortfolioProject,
   PortfolioProfile,
   PortfolioSkills,
   PortfolioTraining,
@@ -33,6 +35,9 @@ export class PortfolioDataService {
   readonly work = computed<PortfolioWork[]>(() => this.dataState()?.work ?? []);
   readonly education = computed<PortfolioEducation[]>(() => this.dataState()?.education ?? []);
   readonly training = computed<PortfolioTraining[]>(() => this.dataState()?.training ?? []);
+  readonly projects = computed<Project[]>(() =>
+    (this.dataState()?.projects ?? []).map((project) => this.toProject(project)),
+  );
   readonly skills = computed<PortfolioSkills | null>(() => this.dataState()?.skills ?? null);
   readonly languages = computed<PortfolioLanguage[]>(() => this.dataState()?.languages ?? []);
 
@@ -189,7 +194,7 @@ export class PortfolioDataService {
 
   private formatDateRange(start?: string, end?: string): string {
     if (!start && !end) {
-      return 'Date unavailable';
+      return '';
     }
 
     const startLabel = this.formatDate(start);
@@ -228,5 +233,20 @@ export class PortfolioDataService {
     }
 
     return normalized;
+  }
+
+  private toProject(project: PortfolioProject): Project {
+    return {
+      id: project.id || this.slugify(project.title),
+      title: project.title,
+      thumbnailUrl: project.thumbnailUrl,
+      summary: project.summary,
+      description: project.description,
+      category: project.category,
+      technologies: project.technologies ?? [],
+      featured: project.featured ?? false,
+      liveUrl: project.liveUrl,
+      sourceUrl: project.sourceUrl,
+    };
   }
 }

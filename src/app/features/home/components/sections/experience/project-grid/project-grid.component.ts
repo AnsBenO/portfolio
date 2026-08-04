@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { Project } from '../../../core/models/project.model';
-import { GridComponent } from '../../layout/grid/grid.component';
+import { Project } from '../../../../../../core/models/project.model';
+import { GridComponent } from '../../../../../../shared/layout/grid/grid.component';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 
 @Component({

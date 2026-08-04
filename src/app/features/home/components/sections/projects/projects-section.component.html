@@ -1,0 +1,49 @@
+<section id="projects" class="section-screen section-anchor">
+
+      <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
+
+            <ui-section-header eyebrow="Builds" title="Projects"
+                  subtitle="Standalone work, open-source contributions, and experiments published on GitHub.">
+            </ui-section-header>
+
+            <!-- Background -->
+            <div class="pointer-events-none absolute inset-0 overflow-hidden">
+
+                  <div class="absolute -top-24 left-1/4 h-80 w-80 rounded-full
+               bg-[rgb(var(--brand-rgb)/0.06)] blur-3xl">
+                  </div>
+
+                  <div class="absolute bottom-0 right-1/4 h-80 w-80 rounded-full
+               bg-cyan-400/5 blur-3xl">
+                  </div>
+
+            </div>
+
+            <div class="relative mt-10">
+
+                  <div class="mb-8 flex items-center justify-between">
+
+                        <h3 class="text-lg font-semibold text-[hsl(var(--text-1))]">
+                              Featured Projects
+                        </h3>
+
+                        <span class="text-sm text-[hsl(var(--text-2))]">
+                              {{ projects().length }} Projects
+                        </span>
+
+                  </div>
+
+                  <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
+
+                        @for (project of projects(); track project.id) {
+                        <content-project-card [project]="project" featured="true">
+                        </content-project-card>
+                        }
+
+                  </div>
+
+            </div>
+
+      </ui-section-container>
+
+</section>

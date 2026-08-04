@@ -30,6 +30,19 @@ export interface PortfolioWorkProject {
   technologies: string[];
 }
 
+export interface PortfolioProject {
+  id: string;
+  title: string;
+  thumbnailUrl?: string;
+  summary?: string;
+  description?: string;
+  category?: 'web' | 'mobile' | 'api' | 'platform';
+  technologies?: string[];
+  featured?: boolean;
+  liveUrl?: string;
+  sourceUrl?: string;
+}
+
 export interface PortfolioWork {
   company: string;
   position: string;
@@ -78,6 +91,7 @@ export interface PortfolioData {
   work: PortfolioWork[];
   education: PortfolioEducation[];
   training: PortfolioTraining[];
+  projects?: PortfolioProject[];
   skills: PortfolioSkills;
   languages: PortfolioLanguage[];
 }

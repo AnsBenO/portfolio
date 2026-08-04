@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { Experience } from '../../../core/models/experience.model';
-import { TechnologyChipComponent } from '../../ui/technology-chip/technology-chip.component';
+import { Experience } from '../../../../../../core/models/experience.model';
+import { TechnologyChipComponent } from '../../../../../../shared/ui/technology-chip/technology-chip.component';
 
 @Component({
   selector: 'content-experience-card',
