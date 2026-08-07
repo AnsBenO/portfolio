@@ -1,6 +1,18 @@
-<mat-drawer-container class="min-h-0 bg-transparent" autosize>
+<mat-drawer-container>
+
+      <!-- Mobile Side Menu -->
       <mat-drawer #drawer mode="over" position="end" class="glass-drawer w-72 border-0">
-            <nav aria-label="Mobile navigation" class="flex h-full flex-col gap-2 p-4">
+
+            <!-- Mobile menu button -->
+            <div class="fixed right-6 top-5 z-1000 md:hidden">
+
+                  <button mat-icon-button class="glass-ghost-button" (click)="drawer.toggle()"
+                        aria-label="Toggle navigation menu">
+                        <mat-icon>close</mat-icon>
+                  </button>
+
+            </div>
+            <nav aria-label="Mobile navigation" class="flex h-full flex-col gap-2 pt-24 px-4">
                   @for (link of navLinks; track link.id) {
                   <a [attr.href]="'#' + link.id" (click)="$event.preventDefault(); scrollToSection(link.id, drawer)"
                         [class.nav-link-active]="isActive(link.id)" class="nav-link">
@@ -14,48 +26,81 @@
       </mat-drawer>
 
       <mat-drawer-content class="bg-transparent">
-            <header class="sticky top-0 z-40 pb-4 pt-2 md:hidden">
+
+            <!-- Mobile navigation: visible only below the md breakpoint -->
+
+            <header [class.opacity-0]="drawer.opened" class="sticky top-0 z-40 pb-4 pt-2 md:hidden">
+                  <!-- Mobile navbar container -->
                   <div
                         class="glass-panel nav-shell mx-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-2xl px-4 py-3 sm:px-6">
+                        <!-- Logo + user information -->
+                        <!-- Clicking prevents default anchor behavior and uses custom smooth scrolling -->
                         <a href="#home" (click)="$event.preventDefault(); scrollToSection('home')"
                               class="flex items-center gap-3">
+
+                              <!-- Displays generated initials (example: AB) -->
                               <span
                                     class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[rgba(var(--brand-rgb),0.24)] text-sm font-semibold text-[hsl(var(--text-1))]">
                                     {{ brandInitials() }}
                               </span>
+
                               <div>
-                                    <p class="m-0 text-sm font-semibold tracking-tight text-[hsl(var(--text-1))]">{{
-                                          basics()?.name ?? 'Portfolio' }}</p>
-                                    <p class="m-0 text-xs text-[hsl(var(--text-2))]">{{ basics()?.role ?? 'Role' }}</p>
+                                    <p class="m-0 text-sm font-semibold tracking-tight text-[hsl(var(--text-1))]">
+                                          {{ basics()?.name ?? 'Portfolio' }}
+                                    </p>
+                                    <p class="m-0 text-xs text-[hsl(var(--text-2))]">
+                                          {{ basics()?.role ?? 'Role' }}
+                                    </p>
                               </div>
                         </a>
-                        <div class="flex items-center gap-2">
+
+                        <!-- Mobile menu button -->
+                        <div class="fixed right-4 z-1000 md:hidden">
+
                               <button mat-icon-button class="glass-ghost-button" (click)="drawer.toggle()"
-                                    aria-label="Open navigation menu">
+                                    aria-label="Toggle navigation menu">
+
                                     <mat-icon>menu</mat-icon>
+
                               </button>
+
                         </div>
                   </div>
             </header>
 
+
+            <!-- Desktop navigation sidebar -->
             <aside aria-label="Primary navigation"
                   class="side-rail glass-panel fixed left-5 top-1/2 -translate-y-1/2 z-40 hidden w-20 flex-col items-center gap-3 rounded-2xl py-3 md:flex">
+                  <!-- Desktop logo -->
                   <a href="#home" (click)="$event.preventDefault(); scrollToSection('home')" class="rail-logo"
                         title="Home">
                         {{ brandInitials() }}
                   </a>
+                  <!-- Child component responsible for changing theme -->
+                  <!-- compact=true tells it to use the small version -->
                   <ui-theme-toggle [compact]="true"></ui-theme-toggle>
+                  <!-- Visual separator -->
                   <div class="h-px w-11 bg-[rgba(var(--border-rgb),0.35)]"></div>
+                  <!-- Desktop navigation links -->
                   <nav aria-label="Desktop navigation" class="flex w-full flex-col items-center gap-1 px-2">
+                        <!-- Loops through the navigation links array -->
+                        <!-- track link.id helps Angular optimize rendering -->
                         @for (link of navLinks; track link.id) {
+                        <!-- Creates one link for each navigation item -->
                         <a [attr.href]="'#' + link.id" (click)="$event.preventDefault(); scrollToSection(link.id)"
                               [class.rail-link-active]="isActive(link.id)" class="rail-link"
                               [attr.aria-label]="link.label" [attr.title]="link.label">
                               <mat-icon>{{ link.icon }}</mat-icon>
-                              <span class="rail-link-label">{{ link.label }}</span>
+                              <!-- Text label comes from the navigation object -->
+                              <span class="rail-link-label">
+                                    {{ link.label }}
+                              </span>
                         </a>
                         }
                   </nav>
             </aside>
       </mat-drawer-content>
+
+
 </mat-drawer-container>

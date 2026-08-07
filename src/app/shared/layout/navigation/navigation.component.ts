@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { MatDrawer, MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav';
 import { PortfolioDataService } from '../../../core/services/portfolio-data.service';
 import { SectionSpyService } from '../../../core/services/section-spy.service';
 import { ThemeToggleComponent } from '../../ui/theme-toggle/theme-toggle.component';
@@ -14,14 +14,17 @@ interface NavLink {
 
 @Component({
   selector: 'ui-navigation',
-  imports: [MatButtonModule, MatIconModule, MatSidenavModule, ThemeToggleComponent],
+  imports: [MatButtonModule, MatIconModule, MatSidenavModule, ThemeToggleComponent, MatDrawerContainer],
   templateUrl: './navigation.component.html',
 })
 export class NavigationComponent {
+  
   protected readonly sectionSpy = inject(SectionSpyService);
   private readonly portfolioData = inject(PortfolioDataService);
-
   protected readonly basics = this.portfolioData.basics;
+
+  drawer!: MatDrawer;
+
   protected readonly brandInitials = computed(() => {
     const name = this.basics()?.name;
 
