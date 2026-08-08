@@ -249,4 +249,8 @@ export class PortfolioDataService {
       sourceUrl: project.sourceUrl,
     };
   }
+
+  get getPortfolioData(){
+    return this.dataState();
+  }
 }
