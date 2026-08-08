@@ -37,7 +37,7 @@ export class SectionSpyService implements OnDestroy {
   private updateActiveSection(): void {
     if (this.suppressed) return;
 
-    const triggerLine = window.innerHeight * 0.2;
+    const triggerLine = window.innerHeight * 0.275;
     let activeId = this.sections[0]?.getAttribute('id') ?? null;
 
     for (const section of this.sections) {

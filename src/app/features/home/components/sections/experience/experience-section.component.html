@@ -2,9 +2,22 @@
       <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
             <ui-section-header eyebrow="Career" title="Experience Highlights"
                   subtitle="Recent roles with measurable product and engineering impact."></ui-section-header>
-            <div class="mt-6 grid gap-6">
-                  @for (item of experienceHighlights(); track item.id) {
-                  <content-experience-card [experience]="item"></content-experience-card>
+
+            <div class="mt-6 flex flex-col">
+                  @for (item of experienceHighlights(); track item.id; let isLast = $last) {
+
+                  <div class="grid grid-cols-[24px_1fr] gap-x-4">
+                        <!-- timeline design -->
+                        <div class="flex flex-col items-center mt-9">
+                              <span
+                                    class="mt-1.5 h-3 w-3 shrink-0 rounded-full bg-[hsl(var(--timeline))] shadow-[0_0_0_4px_hsl(var(--timeline)/0.15)]"></span>
+                              @if (!isLast) {
+                              <span
+                                    class="my-1 w-0.5 flex-1 bg-linear-to-b from-[hsl(var(--timeline)/0.4)] to-[hsl(var(--timeline)/0.05)]"></span>
+                              }
+                        </div>
+                        <content-experience-card class="pb-7" [experience]="item"></content-experience-card>
+                  </div>
                   }
             </div>
       </ui-section-container>
