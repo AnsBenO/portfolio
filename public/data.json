@@ -18,6 +18,11 @@
         "network": "GitHub",
         "username": "AnsBenO",
         "url": "https://github.com/AnsBenO"
+      }, 
+      {
+        "network": "Personal Page",
+        "username": "Personal Page",
+        "url": "https://ansbeno.github.io/portfolio/"
       }
     ],
     "summary": "Full Stack Developer with experience in building, optimizing, and maintaining enterprise-grade applications. Experienced in building robust business features using Spring Boot, Angular, SQL, and Representational State Transfer (REST) APIs, as well as conducting deep-dive incident investigations, performing Root Cause Analysis (RCA), and collaborating across cross-functional development and operations teams to ensure high application availability."
@@ -52,8 +57,7 @@
             "Maintained cloud-based applications on Google Cloud Platform (GCP) and Google Kubernetes Engine (GKE), troubleshooting containerized services and supporting high availability.",
             "Improved operational reliability through infrastructure maintenance, Secure Sockets Layer (SSL) certificate renewals, cache optimization, and system improvements.",
             "Supported reliable backend microservice releases through Jenkins Continuous Integration and Continuous Deployment (CI/CD) pipelines.",
-            "Delivered Adobe Experience Manager (AEM) application and content updates using CRX Package Manager.",
-            "Automated Excel reporting workflows with a Java desktop tool, reducing repetitive manual tasks for the team."
+            "Delivered Adobe Experience Manager (AEM) application and content updates using CRX Package Manager."
           ],
           "technologies": [
             "Google Cloud Platform (GCP)",
@@ -77,17 +81,6 @@
             "Enhanced backend test coverage to over 80% by implementing JUnit and Mockito unit tests, leveraging AI-assisted development to improve test creation efficiency and maintain code quality."
           ],
           "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
-        },
-        {
-          "name": "CV APP – Resume Management Application",
-          "description": "Resume data transformation and persistence module",
-          "startDate": "2024-05-01",
-          "endDate": "2024-05-31",
-          "highlights": [
-            "Designed a normalized database schema and Unified Modeling Language (UML) entity model to ensure consistent storage of employee profiles and qualifications.",
-            "Implemented Java functionality to persist resume data, enabling employees to generate standardized Europass resumes."
-          ],
-          "technologies": ["Java", "Unified Modeling Language (UML)", "Database Design"]
         }
       ]
     }

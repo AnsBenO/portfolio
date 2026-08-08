@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { PortfolioProfile } from '../../../../../core/models/portfolio-data.model';
 import { PortfolioDataService } from '../../../../../core/services/portfolio-data.service';
@@ -6,6 +6,7 @@ import { GlassCardComponent } from '../../../../../shared/ui/glass-card/glass-ca
 import { IconButtonComponent } from '../../../../../shared/ui/icon-button/icon-button.component';
 import { StackComponent } from '../../../../../shared/layout/stack/stack.component';
 import { ButtonComponent } from '../../../../../shared/ui/button/button.component';
+import { ResumePdfService } from '../../../../../core/services/resume-pdf.service';
 
 @Component({
   selector: 'intro-section',
@@ -21,6 +22,7 @@ import { ButtonComponent } from '../../../../../shared/ui/button/button.componen
 })
 export class IntroSectionComponent {
   private readonly portfolioData = inject(PortfolioDataService);
+  private readonly resumeService = inject(ResumePdfService);
 
   protected readonly basics = this.portfolioData.basics;
   protected readonly profiles = this.portfolioData.profiles;
@@ -55,5 +57,10 @@ export class IntroSectionComponent {
     }
 
     return 'link';
+  }
+
+  protected generateResume() {
+    const data = this.portfolioData.getPortfolioData;
+    data && this.resumeService.generate(data);
   }
 }
