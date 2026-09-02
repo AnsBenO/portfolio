@@ -6,7 +6,7 @@ import { Component, input } from '@angular/core';
     <div class="flex flex-wrap items-start justify-between gap-4">
       <div>
         @if (eyebrow()) {
-          <p class="eyebrow">{{ eyebrow() }}</p>
+          <p class="eyebrow section-kicker">{{ eyebrow() }}</p>
         }
         <h1 class="mt-1 text-3xl font-semibold tracking-tight sm:text-4xl">{{ title() }}</h1>
         @if (subtitle()) {

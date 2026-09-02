@@ -8,6 +8,7 @@ import { SkillsSectionComponent } from './components/sections/skills/skills-sect
 import { LanguagesSectionComponent } from './components/sections/languages/languages-section.component';
 import { ContactSectionComponent } from './components/sections/contact/contact-section.component';
 import { IntroSectionComponent } from './components/sections/intro/intro-section.component';
+import { GithubStatisticsComponent } from './components/sections/github-statistics/github-statistics.component';
 
 @Component({
   selector: 'page-home',
@@ -17,6 +18,7 @@ import { IntroSectionComponent } from './components/sections/intro/intro-section
     AboutSectionComponent,
     ExperienceSectionComponent,
     ProjectsSectionComponent,
+    GithubStatisticsComponent,
     SkillsSectionComponent,
     LanguagesSectionComponent,
     ContactSectionComponent,
@@ -28,6 +30,7 @@ import { IntroSectionComponent } from './components/sections/intro/intro-section
       <experience-section></experience-section>
       <projects-section></projects-section>
       <skills-section></skills-section>
+      <app-github-statistics></app-github-statistics>
       <languages-section></languages-section>
       <contact-section></contact-section>
     </ui-page-container>
@@ -44,6 +47,7 @@ export class HomePage implements AfterViewInit, OnDestroy {
     'education',
     'training',
     'skills',
+    'github-statistics',
     'languages',
     'contact',
   ];

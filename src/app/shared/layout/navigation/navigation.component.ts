@@ -48,6 +48,7 @@ export class NavigationComponent {
     { label: 'Experience', id: 'experience', icon: 'timeline' },
     { label: 'Projects', id: 'projects', icon: 'code' },
     { label: 'Skills', id: 'skills', icon: 'psychology' },
+    { label: 'GitHub Stats', id: 'github-statistics', icon: 'brand-github' },
     { label: 'Languages', id: 'languages', icon: 'translate' },
     { label: 'Contact', id: 'contact', icon: 'alternate_email' },
   ];

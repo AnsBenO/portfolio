@@ -1,0 +1,165 @@
+<section id="github-statistics" class="section-screen section-anchor">
+  <ui-section-container [glass]="true" rounded="3xl" spacing="xl">
+
+    <!-- Header -->
+    <ui-section-header
+      eyebrow="GitHub Analytics"
+      title="Development activity"
+      subtitle="An overview of my projects, repositories, and activity on GitHub.">
+    </ui-section-header>
+
+
+    @if (hasError) {
+      <div class="mb-4 rounded-lg border border-[rgba(var(--border-rgb),0.24)] bg-[rgba(var(--surface-strong-rgb),0.36)] p-4 text-sm text-[hsl(var(--text-2))]">
+        <div class="flex items-center justify-between gap-4">
+          <div>
+            <strong>Unable to load GitHub data.</strong>
+            <div class="mt-1">{{ errorMessage }}</div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="glass-cta-button" type="button" (click)="loadGithubStatistics()">Retry</button>
+          </div>
+        </div>
+      </div>
+    } 
+
+    <!-- Overview -->
+    <ui-grid columns="two" gap="4">
+
+      <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
+        <p class="section-kicker eyebrow">01 / Repositories</p>
+        <p class="mt-3 text-4xl font-semibold tracking-tight">
+          {{ publicRepos }}
+        </p>
+      </ui-section-container>
+
+      <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
+        <p class="section-kicker eyebrow">02 / Audience</p>
+        <p class="mt-3 text-4xl font-semibold tracking-tight">
+          {{ followers }}
+        </p>
+      </ui-section-container>
+
+      <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
+        <p class="section-kicker eyebrow">03 / Network</p>
+        <p class="mt-3 text-4xl font-semibold tracking-tight">
+          {{ following }}
+        </p>
+      </ui-section-container>
+
+      <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
+        <p class="section-kicker eyebrow">04 / Signal</p>
+        <p class="mt-3 text-4xl font-semibold tracking-tight">
+          {{ totalStars }}
+        </p>
+      </ui-section-container>
+
+    </ui-grid>
+
+
+    <!-- Contribution Activity -->
+    <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
+
+      <div class="chart-heading mb-6">
+        <h2 class="text-lg font-semibold">
+          Contribution activity
+        </h2>
+
+        <p class="mt-1 text-sm opacity-70">
+          Development activity across public repositories.
+        </p>
+      </div>
+
+      <div class="relative h-72 w-full">
+        <canvas
+          baseChart
+          [type]="'line'"
+          [data]="contributionData"
+          [options]="contributionOptions">
+        </canvas>
+      </div>
+
+    </ui-section-container>
+
+
+    <!-- Repository & Languages -->
+    <ui-grid columns="two" gap="6">
+
+      <!-- Repository Popularity -->
+      <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
+
+        <div class="chart-heading mb-6">
+          <h2 class="text-lg font-semibold">
+            Repository popularity
+          </h2>
+
+          <p class="mt-1 text-sm opacity-70">
+            Repositories ranked by stars.
+          </p>
+        </div>
+
+        <div class="relative h-80 w-full">
+          <canvas
+            baseChart
+            [type]="'bar'"
+            [data]="repositoryStarsData"
+            [options]="repositoryStarsOptions">
+          </canvas>
+        </div>
+
+      </ui-section-container>
+
+
+      <!-- Languages -->
+      <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
+
+        <div class="chart-heading mb-6">
+          <h2 class="text-lg font-semibold">
+            Languages
+          </h2>
+
+          <p class="mt-1 text-sm opacity-70">
+            Languages used across public repositories.
+          </p>
+        </div>
+
+        <div class="relative h-80 w-full">
+          <canvas
+            baseChart
+            [type]="'doughnut'"
+            [data]="languagesData"
+            [options]="languagesOptions">
+          </canvas>
+        </div>
+
+      </ui-section-container>
+
+    </ui-grid>
+
+
+    <!-- Code Activity -->
+    <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
+
+      <div class="chart-heading mb-6">
+        <h2 class="text-lg font-semibold">
+          Code activity
+        </h2>
+
+        <p class="mt-1 text-sm opacity-70">
+          Additions and deletions over time.
+        </p>
+      </div>
+
+      <div class="relative h-72 w-full">
+        <canvas
+          baseChart
+          [type]="'line'"
+          [data]="codeActivityData"
+          [options]="codeActivityOptions">
+        </canvas>
+      </div>
+
+    </ui-section-container>
+
+  </ui-section-container>
+</section>

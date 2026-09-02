@@ -91,12 +91,16 @@
                         <a [attr.href]="'#' + link.id" (click)="$event.preventDefault(); scrollToSection(link.id)"
                               [class.rail-link-active]="isActive(link.id)" class="rail-link"
                               [attr.aria-label]="link.label" [attr.title]="link.label">
-                              <mat-icon>{{ link.icon }}</mat-icon>
-                              <!-- Text label comes from the navigation object -->
-                              <span class="rail-link-label">
-                                    {{ link.label }}
-                              </span>
-                        </a>
+                                                      @if (link.icon && link.icon.startsWith('brand-')) {
+                                                        <mat-icon [svgIcon]="link.icon"></mat-icon>
+                                                      } @else {
+                                                        <mat-icon>{{ link.icon }}</mat-icon>
+                                                      }
+                                                      <!-- Text label comes from the navigation object -->
+                                                      <span class="rail-link-label">
+                                                            {{ link.label }}
+                                                      </span>
+                                                </a>
                         }
                   </nav>
             </aside>
