@@ -1,5 +1,35 @@
 @import 'tailwindcss';
 
+@theme {
+  /* HSL Variable Mapping (uses the space-separated channels) */
+  --color-bg-start: hsl(var(--bg-start));
+  --color-bg-mid: hsl(var(--bg-mid));
+  --color-bg-end: hsl(var(--bg-end));
+
+  --color-surface-1: hsl(var(--surface-1));
+  --color-surface-2: hsl(var(--surface-2));
+  --color-surface-3: hsl(var(--surface-3));
+
+  --color-text-1: hsl(var(--text-1));
+  --color-text-2: hsl(var(--text-2));
+
+  --color-border-1: hsl(var(--border-1));
+
+  --color-brand-1: hsl(var(--brand-1));
+  --color-brand-2: hsl(var(--brand-2));
+
+  --color-accent-1: hsl(var(--accent-1));
+  --color-critical-1: hsl(var(--critical-1));
+  --color-timeline: hsl(var(--timeline));
+
+  /* RGB Variable Mapping (uses the comma-separated channels) */
+  --color-surface-rgb: rgb(var(--surface-rgb));
+  --color-surface-strong-rgb: rgb(var(--surface-strong-rgb));
+  --color-border-rgb: rgb(var(--border-rgb));
+  --color-brand-rgb: rgb(var(--brand-rgb));
+  --color-text-rgb: rgb(var(--text-rgb));
+}
+
 :root {
   --bg-start: 39 100% 97%;
   --bg-mid: 37 72% 93%;
@@ -69,7 +99,12 @@ html.dark {
       linear-gradient(145deg, hsl(var(--bg-start)), hsl(var(--bg-mid)) 46%, hsl(var(--bg-end)));
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 2.2rem 2.2rem, 2.2rem 2.2rem, auto, auto, cover;
+    background-size:
+      2.2rem 2.2rem,
+      2.2rem 2.2rem,
+      auto,
+      auto,
+      cover;
     font-family: 'Space Grotesk', 'Manrope', sans-serif;
     transition:
       background 220ms ease,
@@ -168,19 +203,21 @@ html.dark {
     letter-spacing: 0.14em;
   }
 
-  .intro-identity {
-    border-color: hsla(var(--brand-2) / 0.42);
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.34),
-      0 24px 48px -30px hsla(var(--brand-2) / 0.75);
-  }
-
   .intro-copy {
     position: relative;
     overflow: hidden;
     background:
-      linear-gradient(135deg, rgba(var(--surface-rgb), 0.78), rgba(var(--surface-strong-rgb), 0.42)),
-      linear-gradient(90deg, transparent 0 72%, hsla(var(--accent-1) / 0.12) 72% 72.5%, transparent 72.5%);
+      linear-gradient(
+        135deg,
+        rgba(var(--surface-rgb), 0.78),
+        rgba(var(--surface-strong-rgb), 0.42)
+      ),
+      linear-gradient(
+        90deg,
+        transparent 0 72%,
+        hsla(var(--accent-1) / 0.12) 72% 72.5%,
+        transparent 72.5%
+      );
   }
 
   .intro-copy::after {
@@ -199,7 +236,10 @@ html.dark {
     overflow: hidden;
     border: 1px solid rgba(var(--border-rgb), 0.28);
     background: rgba(var(--surface-strong-rgb), 0.36);
-    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease;
   }
 
   .metric-tile::before {
