@@ -33,7 +33,7 @@ jobs:
 
       - name: Build app
         run: |
-          BASE_HREF="/${{ github.event.repository.name }}/"
+          BASE_HREF="/"
           npm run build -- --configuration production --base-href "$BASE_HREF"
 
       - name: Setup Pages
