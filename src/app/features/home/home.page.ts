@@ -4,7 +4,6 @@ import { PageContainerComponent } from '../../shared/layout/page-container/page-
 import { AboutSectionComponent } from './components/sections/about/about-section.component';
 import { ExperienceSectionComponent } from './components/sections/experience/experience-section.component';
 import { ProjectsSectionComponent } from './components/sections/projects/projects-section.component';
-import { SkillsSectionComponent } from './components/sections/skills/skills-section.component';
 import { LanguagesSectionComponent } from './components/sections/languages/languages-section.component';
 import { ContactSectionComponent } from './components/sections/contact/contact-section.component';
 import { IntroSectionComponent } from './components/sections/intro/intro-section.component';
@@ -19,7 +18,6 @@ import { GithubStatisticsComponent } from './components/sections/github-statisti
     ExperienceSectionComponent,
     ProjectsSectionComponent,
     GithubStatisticsComponent,
-    SkillsSectionComponent,
     LanguagesSectionComponent,
     ContactSectionComponent,
   ],
@@ -29,7 +27,6 @@ import { GithubStatisticsComponent } from './components/sections/github-statisti
       <about-section></about-section>
       <experience-section></experience-section>
       <projects-section></projects-section>
-      <skills-section></skills-section>
       <app-github-statistics></app-github-statistics>
       <languages-section></languages-section>
       <contact-section></contact-section>
@@ -46,7 +43,6 @@ export class HomePage implements AfterViewInit, OnDestroy {
     'projects',
     'education',
     'training',
-    'skills',
     'github-statistics',
     'languages',
     'contact',
