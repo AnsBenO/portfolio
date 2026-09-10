@@ -24,7 +24,7 @@ export class SectionSpyService implements OnDestroy {
     this.observer = new IntersectionObserver(() => this.updateActiveSection(), {
       root: null,
       threshold: 0,
-      rootMargin: '-20% 0px -79% 0px',
+      rootMargin: '-15% 0px -79% 0px',
     });
 
     for (const section of this.sections) {
