@@ -8,6 +8,7 @@ import { LanguagesSectionComponent } from './components/sections/languages/langu
 import { ContactSectionComponent } from './components/sections/contact/contact-section.component';
 import { IntroSectionComponent } from './components/sections/intro/intro-section.component';
 import { GithubStatisticsComponent } from './components/sections/github-statistics/github-statistics.component';
+import { AchievementSectionComponent } from './components/sections/achievement/achievement-section.component';
 
 @Component({
   selector: 'page-home',
@@ -17,6 +18,7 @@ import { GithubStatisticsComponent } from './components/sections/github-statisti
     AboutSectionComponent,
     ExperienceSectionComponent,
     ProjectsSectionComponent,
+    AchievementSectionComponent,
     GithubStatisticsComponent,
     LanguagesSectionComponent,
     ContactSectionComponent,
@@ -25,6 +27,7 @@ import { GithubStatisticsComponent } from './components/sections/github-statisti
     <ui-page-container spacing="spacious" maxWidth="6xl">
       <intro-section></intro-section>
       <about-section></about-section>
+      <achievement-section></achievement-section>
       <experience-section></experience-section>
       <projects-section></projects-section>
       <app-github-statistics></app-github-statistics>
@@ -39,6 +42,7 @@ export class HomePage implements AfterViewInit, OnDestroy {
   protected readonly sectionIds = [
     'home',
     'about',
+    'achievements',
     'experience',
     'projects',
     'education',

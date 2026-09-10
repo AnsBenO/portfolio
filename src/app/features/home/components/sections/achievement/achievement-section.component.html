@@ -1,0 +1,14 @@
+<section id="achievements" class="section-screen section-anchor">
+      <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
+            <ui-section-header eyebrow="Achievements" title="Notable Wins"
+                  subtitle="Concrete outcomes delivered while investigating issues and shipping improvements."></ui-section-header>
+
+            @if (achievements().length > 0) {
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                  @for (item of achievements(); track item.title) {
+                  <achievement-card [achievement]="item"></achievement-card>
+                  }
+            </div>
+            }
+      </ui-section-container>
+</section>

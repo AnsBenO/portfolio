@@ -1,3 +1,5 @@
+import { Achievement } from './achievement.model';
+
 export interface PortfolioProfile {
   network: string;
   username: string;
@@ -92,6 +94,7 @@ export interface PortfolioData {
   education: PortfolioEducation[];
   training: PortfolioTraining[];
   projects?: PortfolioProject[];
+  achievements?: Achievement[];
   skills: PortfolioSkills;
   languages: PortfolioLanguage[];
 }

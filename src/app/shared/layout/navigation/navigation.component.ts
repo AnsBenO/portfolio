@@ -45,6 +45,7 @@ export class NavigationComponent {
   protected readonly navLinks: NavLink[] = [
     { label: 'Home', id: 'home', icon: 'home' },
     { label: 'About', id: 'about', icon: 'badge' },
+    { label: 'Achievements', id: 'achievements', icon: 'emoji_events' },
     { label: 'Experience', id: 'experience', icon: 'timeline' },
     { label: 'Projects', id: 'projects', icon: 'code' },
     { label: 'GitHub Stats', id: 'github-statistics', icon: 'brand-github' },

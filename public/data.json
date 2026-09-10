@@ -1,8 +1,8 @@
 {
   "basics": {
     "name": "Anass Benomar",
-    "title": "Full Stack Developer",
-    "role": "Full Stack Developer",
+    "title": "Full Stack Developement and IT Operations",
+    "role": "Full Stack Developement and IT Operations",
     "email": "anas-ben-omar@outlook.com",
     "location": {
       "city": "Tetouan",
@@ -18,7 +18,7 @@
         "network": "GitHub",
         "username": "AnsBenO",
         "url": "https://github.com/AnsBenO"
-      }, 
+      },
       {
         "network": "Personal Page",
         "username": "Personal Page",
@@ -30,7 +30,7 @@
   "work": [
     {
       "company": "NTT DATA",
-      "position": "Full Stack Developer and DevOps Engineer",
+      "position": "Full Stack Developer and Production Support / Application Management",
       "location": "Tetouan, Morocco",
       "startDate": "2024-05-01",
       "endDate": "2026-06-10",
@@ -83,6 +83,21 @@
           "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
         }
       ]
+    }
+  ],
+
+  "achievements": [
+    {
+      "project": "TIM AM",
+      "title": "Automated recurrent team tasks",
+      "description": "Created a Java desktop application to automate recurrent tasks and simplify repetitive operational activities.",
+      "impact": "Saved the team approximately 1 hour of manual work per day."
+    },
+    {
+      "project": "TIM AM",
+      "title": "Resolved GCP access blocker",
+      "description": "Investigated and resolved a GCP access issue that was blocking onboarding. Identified a browser terminal-session initialization issue and developed a workaround by manually navigating to the Welcome page and initializing the browser terminal session before logging in through the local terminal.",
+      "impact": "Unblocked onboarding and enabled the team to take ownership of GCP-related tasks."
     }
   ],
   "projects": [

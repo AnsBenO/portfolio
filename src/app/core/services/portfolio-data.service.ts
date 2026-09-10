@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
+import { Achievement } from '../models/achievement.model';
 import { Experience } from '../models/experience.model';
 import { Project } from '../models/project.model';
 import {
@@ -40,6 +41,7 @@ export class PortfolioDataService {
   );
   readonly skills = computed<PortfolioSkills | null>(() => this.dataState()?.skills ?? null);
   readonly languages = computed<PortfolioLanguage[]>(() => this.dataState()?.languages ?? []);
+  readonly achievements = computed<Achievement[]>(() => this.dataState()?.achievements ?? []);
 
   readonly experienceEntries = computed<Experience[]>(() => {
     const entries: Experience[] = [];
