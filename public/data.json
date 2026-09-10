@@ -96,7 +96,7 @@
     {
       "project": "TIM AM",
       "title": "Resolved GCP access blocker",
-      "description": "Investigated and resolved a GCP access issue that was blocking onboarding. Identified a browser terminal-session initialization issue and developed a workaround by manually navigating to the Welcome page and initializing the browser terminal session before logging in through the local terminal.",
+      "description": "Investigated and resolved a GCP access issue that was blocking onboarding. Identified a browser terminal-session initialization issue and found a workaround by manually navigating to the Welcome page and initializing the browser terminal session before logging in through the local terminal.",
       "impact": "Unblocked onboarding and enabled the team to take ownership of GCP-related tasks."
     }
   ],
