@@ -6,7 +6,7 @@ export class SectionSpyService implements OnDestroy {
   private readonly document = inject(DOCUMENT);
   private observer?: IntersectionObserver;
   private sections: HTMLElement[] = [];
-  private suppressed = false;
+  private isScrollSuppressed = false;
   private scrollWatchRaf?: number;
 
   readonly activeSection = signal('home');
@@ -15,10 +15,7 @@ export class SectionSpyService implements OnDestroy {
     this.disconnect();
     if (typeof window === 'undefined') return;
 
-    this.sections = sectionIds
-      .map((id) => this.document.getElementById(id))
-      .filter((s): s is HTMLElement => s !== null);
-
+    this.sections = this.getTrackedSections(sectionIds);
     if (this.sections.length === 0) return;
 
     this.observer = new IntersectionObserver(() => this.updateActiveSection(), {
@@ -34,21 +31,35 @@ export class SectionSpyService implements OnDestroy {
     this.updateActiveSection();
   }
 
-  private updateActiveSection(): void {
-    if (this.suppressed) return;
+  private getTrackedSections(sectionIds: string[]): HTMLElement[] {
+    return sectionIds
+      .map((id) => this.document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+  }
 
+  private updateActiveSection(): void {
+    if (this.isScrollSuppressed) return;
+
+    const activeSectionId = this.getActiveSectionId();
+    if (activeSectionId) {
+      this.activeSection.set(activeSectionId);
+    }
+  }
+
+  private getActiveSectionId(): string | null {
     const triggerLine = window.innerHeight * 0.275;
-    let activeId = this.sections[0]?.getAttribute('id') ?? null;
+    let activeId = this.sections[0]?.id ?? null;
 
     for (const section of this.sections) {
       if (section.getBoundingClientRect().top <= triggerLine) {
-        activeId = section.getAttribute('id');
-      } else {
-        break;
+        activeId = section.id;
+        continue;
       }
+
+      break;
     }
 
-    if (activeId) this.activeSection.set(activeId);
+    return activeId;
   }
 
   scrollTo(sectionId: string): void {
@@ -58,10 +69,8 @@ export class SectionSpyService implements OnDestroy {
     this.activeSection.set(sectionId);
     this.cancelScrollWatch();
 
-    const headerOffset = this.getHeaderOffset();
-    const target = section.getBoundingClientRect().top + window.scrollY - headerOffset;
-
-    this.suppressed = true;
+    const target = this.getScrollTarget(section);
+    this.isScrollSuppressed = true;
     window.scrollTo({ top: target, behavior: 'smooth' });
 
     if (typeof history !== 'undefined') {
@@ -69,6 +78,11 @@ export class SectionSpyService implements OnDestroy {
     }
 
     this.watchForScrollSettle(target);
+  }
+
+  private getScrollTarget(section: HTMLElement): number {
+    const headerOffset = this.getHeaderOffset();
+    return section.getBoundingClientRect().top + window.scrollY - headerOffset;
   }
 
   // Polls scrollY on rAF until it stops moving and is close to the
@@ -80,14 +94,14 @@ export class SectionSpyService implements OnDestroy {
     let stableFrames = 0;
 
     const check = () => {
-      const y = window.scrollY;
-      const closeEnough = Math.abs(y - target) < 2;
-      const unchanged = Math.abs(y - lastY) < 0.5;
+      const currentY = window.scrollY;
+      const closeEnough = Math.abs(currentY - target) < 2;
+      const unchanged = Math.abs(currentY - lastY) < 0.5;
       stableFrames = unchanged ? stableFrames + 1 : 0;
-      lastY = y;
+      lastY = currentY;
 
       if ((closeEnough && stableFrames >= 2) || performance.now() > deadline) {
-        this.suppressed = false;
+        this.isScrollSuppressed = false;
         this.scrollWatchRaf = undefined;
         return;
       }
@@ -106,10 +120,10 @@ export class SectionSpyService implements OnDestroy {
   }
 
   private getHeaderOffset(): number {
-    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-    if (isDesktop) {
+    if (window.matchMedia('(min-width: 768px)').matches) {
       return 45;
     }
+
     const header = this.document.querySelector('header.sticky') as HTMLElement | null;
     return (header?.offsetHeight ?? 0) + 16;
   }
