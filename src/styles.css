@@ -303,6 +303,18 @@ html.dark[data-palette='violet'] {
     color: hsl(var(--brand-1));
   }
 
+  .intro-role {
+    max-width: 18rem;
+    margin-inline: auto;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    line-height: 1.45;
+    letter-spacing: normal;
+    text-transform: none;
+    font-size: clamp(0.7rem, 3.5vw, 0.85rem);
+  }
+
   .section-kicker {
     display: inline-flex;
     align-items: center;

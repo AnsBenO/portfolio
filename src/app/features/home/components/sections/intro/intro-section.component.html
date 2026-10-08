@@ -19,7 +19,7 @@
                                     class="mt-2 text-3xl font-semibold tracking-tight text-[hsl(var(--text-1))] sm:text-4xl">
                                     {{ basics()?.name ?? 'Portfolio' }}
                               </h1>
-                              <p class="eyebrow">{{ basics()?.role ?? localization.text('common.role') }}</p>
+                              <p class="eyebrow intro-role">{{ basics()?.role ?? localization.text('common.role') }}</p>
 
                               <div class="mt-5 flex items-center justify-center gap-3">
                                     <ui-icon-button [ariaLabel]="localization.text('a11y.sendEmail')" size="md" [link]="mailLink()"
