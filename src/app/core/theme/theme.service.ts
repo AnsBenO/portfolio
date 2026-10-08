@@ -1,8 +1,9 @@
 import { DOCUMENT } from '@angular/common';
 import { DestroyRef, Injectable, computed, effect, inject, signal } from '@angular/core';
-import { ThemePreference } from './theme.types';
+import { isThemePalette, ThemePalette, ThemePreference } from './theme.types';
 
 const THEME_STORAGE_KEY = 'theme-preference';
+const PALETTE_STORAGE_KEY = 'theme-palette';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
@@ -11,8 +12,10 @@ export class ThemeService {
 
   private readonly preferenceState = signal<ThemePreference>('system');
   private readonly systemDarkState = signal(false);
+  private readonly paletteState = signal<ThemePalette>('ocean');
 
   readonly preference = this.preferenceState.asReadonly();
+  readonly palette = this.paletteState.asReadonly();
   readonly currentTheme = computed(() => this.resolveTheme(this.preferenceState()));
 
   constructor() {
@@ -24,6 +27,7 @@ export class ThemeService {
 
       htmlElement.classList.toggle('dark', resolvedTheme === 'dark');
       htmlElement.dataset['theme'] = resolvedTheme;
+      htmlElement.dataset['palette'] = this.paletteState();
       htmlElement.style.colorScheme = resolvedTheme;
     });
   }
@@ -39,6 +43,11 @@ export class ThemeService {
     localStorage.setItem(THEME_STORAGE_KEY, preference);
   }
 
+  setPalette(palette: ThemePalette): void {
+    this.paletteState.set(palette);
+    localStorage.setItem(PALETTE_STORAGE_KEY, palette);
+  }
+
   private initializeThemeState(): void {
     if (typeof window === 'undefined') {
       return;
@@ -47,6 +56,11 @@ export class ThemeService {
     const storedPreference = localStorage.getItem(THEME_STORAGE_KEY);
     if (storedPreference === 'light' || storedPreference === 'dark') {
       this.preferenceState.set(storedPreference);
+    }
+
+    const storedPalette = localStorage.getItem(PALETTE_STORAGE_KEY);
+    if (isThemePalette(storedPalette)) {
+      this.paletteState.set(storedPalette);
     }
 
     if (typeof window.matchMedia !== 'function') {

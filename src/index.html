@@ -15,9 +15,13 @@
   <script>
     (() => {
       const storageKey = 'theme-preference';
+      const paletteStorageKey = 'theme-palette';
       const storedTheme = localStorage.getItem(storageKey);
+      const storedPalette = localStorage.getItem(paletteStorageKey);
+      const palettes = ['ocean', 'forest', 'violet'];
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       let resolvedTheme = prefersDark ? 'dark' : 'light';
+      const resolvedPalette = palettes.includes(storedPalette) ? storedPalette : 'ocean';
 
       if (storedTheme === 'dark' || storedTheme === 'light') {
         resolvedTheme = storedTheme;
@@ -25,6 +29,7 @@
 
       document.documentElement.classList.toggle('dark', resolvedTheme === 'dark');
       document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset.palette = resolvedPalette;
       document.documentElement.style.colorScheme = resolvedTheme;
     })();
   </script>

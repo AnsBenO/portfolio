@@ -40,9 +40,9 @@
   --text-1: 222 47% 9%;
   --text-2: 218 18% 32%;
   --border-1: 215 18% 62%;
-  --brand-1: 221 83% 53%;     /* electric blue */
-  --brand-2: 160 84% 32%;     /* terminal green */
-  --accent-1: 38 92% 50%;     /* amber */
+  --brand-1: 221 83% 53%; /* electric blue */
+  --brand-2: 160 84% 32%; /* terminal green */
+  --accent-1: 38 92% 50%; /* amber */
   --critical-1: 350 80% 52%;
   --timeline: 221 83% 53%;
 
@@ -64,9 +64,9 @@ html.dark {
   --text-1: 210 40% 96%;
   --text-2: 215 20% 74%;
   --border-1: 217 25% 36%;
-  --brand-1: 190 100% 55%;    /* electric cyan */
-  --brand-2: 152 85% 55%;     /* neon green */
-  --accent-1: 38 95% 60%;     /* amber */
+  --brand-1: 190 100% 55%; /* electric cyan */
+  --brand-2: 152 85% 55%; /* neon green */
+  --accent-1: 38 95% 60%; /* amber */
   --critical-1: 350 90% 68%;
   --timeline: 190 100% 55%;
 
@@ -76,6 +76,120 @@ html.dark {
   --brand-rgb: 26, 217, 255;
   --text-rgb: 240, 244, 250;
 }
+
+:root[data-palette='forest'] {
+  --bg-start: 145 30% 97%;
+  --bg-mid: 144 28% 93%;
+  --bg-end: 144 30% 86%;
+
+  --surface-1: 145 30% 99%;
+  --surface-2: 144 24% 95%;
+  --surface-3: 144 20% 89%;
+  --text-1: 152 35% 9%;
+  --text-2: 150 18% 32%;
+  --border-1: 145 18% 62%;
+  --brand-1: 151 65% 34%;
+  --brand-2: 174 70% 35%;
+  --accent-1: 28 92% 50%;
+  --critical-1: 350 80% 52%;
+  --timeline: 151 65% 34%;
+
+  --surface-rgb: 250, 253, 250;
+  --surface-strong-rgb: 226, 238, 230;
+  --border-rgb: 137, 163, 145;
+  --brand-rgb: 30, 143, 91;
+  --text-rgb: 15, 31, 21;
+}
+
+html.dark[data-palette='forest'] {
+  --bg-start: 152 38% 5%;
+  --bg-mid: 151 36% 8%;
+  --bg-end: 150 40% 14%;
+
+  --surface-1: 151 32% 10%;
+  --surface-2: 150 30% 14%;
+  --surface-3: 149 28% 19%;
+  --text-1: 145 35% 96%;
+  --text-2: 148 20% 74%;
+  --border-1: 148 25% 36%;
+  --brand-1: 150 76% 59%;
+  --brand-2: 173 75% 54%;
+  --accent-1: 38 95% 60%;
+  --critical-1: 350 90% 68%;
+  --timeline: 150 76% 59%;
+
+  --surface-rgb: 17, 26, 21;
+  --surface-strong-rgb: 25, 38, 31;
+  --border-rgb: 69, 94, 78;
+  --brand-rgb: 61, 230, 145;
+  --text-rgb: 240, 248, 242;
+}
+
+:root[data-palette='violet'] {
+  --bg-start: 260 22% 97%;
+  --bg-mid: 259 20% 93%;
+  --bg-end: 258 22% 86%;
+
+  --surface-1: 260 22% 99%;
+  --surface-2: 259 18% 95%;
+  --surface-3: 258 16% 89%;
+
+  --text-1: 258 32% 9%;
+  --text-2: 258 16% 31%;
+
+  --border-1: 258 16% 58%;
+
+  /* Stronger, cooler violet */
+  --brand-1: 258 72% 48%;
+  --brand-2: 280 68% 42%;
+
+  /* Keep the warm contrast */
+  --accent-1: 38 92% 50%;
+
+  --critical-1: 350 78% 50%;
+
+  --timeline: 258 72% 48%;
+
+  --surface-rgb: 250, 249, 253;
+  --surface-strong-rgb: 232, 227, 243;
+  --border-rgb: 145, 133, 165;
+
+  --brand-rgb: 91, 45, 210;
+  --text-rgb: 24, 20, 34;
+}
+
+html.dark[data-palette='violet'] {
+  --bg-start: 258 32% 5%;
+  --bg-mid: 258 30% 8%;
+  --bg-end: 257 34% 13%;
+
+  --surface-1: 258 28% 9%;
+  --surface-2: 258 26% 13%;
+  --surface-3: 257 24% 18%;
+
+  --text-1: 258 28% 96%;
+  --text-2: 258 16% 72%;
+
+  --border-1: 258 22% 34%;
+
+  /* More saturated / less pastel */
+  --brand-1: 258 90% 68%;
+  --brand-2: 280 78% 62%;
+
+  --accent-1: 38 94% 58%;
+
+  --critical-1: 350 86% 65%;
+
+  --timeline: 258 90% 68%;
+
+  --surface-rgb: 20, 17, 29;
+  --surface-strong-rgb: 31, 26, 43;
+  --border-rgb: 77, 64, 100;
+
+  --brand-rgb: 147, 111, 245;
+  --text-rgb: 245, 242, 250;
+}
+
 @layer base {
   html,
   body {

@@ -18,17 +18,6 @@ html {
       density: 0,
     )
   );
-
-  // Bridge Material system variables to app-level semantic tokens.
-  --mat-sys-surface: hsl(var(--surface-1));
-  --mat-sys-surface-container: hsl(var(--surface-2));
-  --mat-sys-surface-container-high: hsl(var(--surface-3));
-  --mat-sys-on-surface: hsl(var(--text-1));
-  --mat-sys-on-surface-variant: hsl(var(--text-2));
-  --mat-sys-outline: hsl(var(--border-1));
-  --mat-sys-primary: hsl(var(--brand-1));
-  --mat-sys-secondary: hsl(var(--brand-2));
-  --mat-sys-error: hsl(var(--critical-1));
   --mat-sidenav-content-background-color: #f3f3f300;
 }
 
@@ -44,6 +33,19 @@ html.dark {
       density: 0,
     )
   );
+}
+
+html,
+html.dark {
+  --mat-sys-surface: hsl(var(--surface-1));
+  --mat-sys-surface-container: hsl(var(--surface-2));
+  --mat-sys-surface-container-high: hsl(var(--surface-3));
+  --mat-sys-on-surface: hsl(var(--text-1));
+  --mat-sys-on-surface-variant: hsl(var(--text-2));
+  --mat-sys-outline: hsl(var(--border-1));
+  --mat-sys-primary: hsl(var(--brand-1));
+  --mat-sys-secondary: hsl(var(--brand-2));
+  --mat-sys-error: hsl(var(--critical-1));
 }
 
 html,
