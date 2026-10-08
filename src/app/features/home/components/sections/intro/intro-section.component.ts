@@ -7,6 +7,7 @@ import { IconButtonComponent } from '../../../../../shared/ui/icon-button/icon-b
 import { StackComponent } from '../../../../../shared/layout/stack/stack.component';
 import { ButtonComponent } from '../../../../../shared/ui/button/button.component';
 import { ResumePdfService } from '../../../../../core/services/resume-pdf.service';
+import { LocalizationService } from '../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'intro-section',
@@ -23,6 +24,7 @@ import { ResumePdfService } from '../../../../../core/services/resume-pdf.servic
 export class IntroSectionComponent {
   private readonly portfolioData = inject(PortfolioDataService);
   private readonly resumeService = inject(ResumePdfService);
+  protected readonly localization = inject(LocalizationService);
 
   protected readonly basics = this.portfolioData.basics;
   protected readonly profiles = this.portfolioData.profiles;

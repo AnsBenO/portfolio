@@ -1,7 +1,8 @@
 <section id="languages" class="section-screen section-anchor">
       <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
-            <ui-section-header eyebrow="Languages" title="Communication"
-                  subtitle="Spoken languages and professional fluency levels."></ui-section-header>
+            <ui-section-header [eyebrow]="localization.text('languages.eyebrow')"
+                  [title]="localization.text('languages.title')"
+                  [subtitle]="localization.text('languages.subtitle')"></ui-section-header>
 
             <div class="mt-6 grid gap-4 sm:grid-cols-2">
                   @for (item of languages(); track item.language) {

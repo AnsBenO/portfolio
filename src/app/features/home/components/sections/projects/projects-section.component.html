@@ -2,8 +2,9 @@
 
       <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
 
-            <ui-section-header eyebrow="Builds" title="Projects"
-                  subtitle="Standalone work and experiments published on GitHub.">
+            <ui-section-header [eyebrow]="localization.text('projects.eyebrow')"
+                  [title]="localization.text('projects.title')"
+                  [subtitle]="localization.text('projects.subtitle')">
             </ui-section-header>
 
             <!-- Background -->
@@ -24,11 +25,11 @@
                   <div class="mb-8 flex items-center justify-between">
 
                         <h3 class="text-lg font-semibold text-[hsl(var(--text-1))]">
-                              Featured Projects
+                              {{ localization.text('projects.featured') }}
                         </h3>
 
                         <span class="text-sm text-[hsl(var(--text-2))]">
-                              {{ projects().length }} Projects
+                              {{ localization.text('projects.count', { count: projects().length }) }}
                         </span>
 
                   </div>

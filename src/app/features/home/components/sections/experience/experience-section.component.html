@@ -1,7 +1,8 @@
 <section id="experience" class="section-screen section-anchor">
       <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
-            <ui-section-header eyebrow="Career" title="Experience Highlights"
-                  subtitle="Recent roles with measurable product and engineering impact."></ui-section-header>
+            <ui-section-header [eyebrow]="localization.text('experience.eyebrow')"
+                  [title]="localization.text('experience.title')"
+                  [subtitle]="localization.text('experience.subtitle')"></ui-section-header>
 
             <div class="mt-6 flex flex-col">
                   @for (item of experienceHighlights(); track item.id; let isLast = $last) {

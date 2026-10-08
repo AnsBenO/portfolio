@@ -5,6 +5,7 @@ import { GlassCardComponent } from '../../../../../shared/ui/glass-card/glass-ca
 import { GridComponent } from '../../../../../shared/layout/grid/grid.component';
 import { StackComponent } from '../../../../../shared/layout/stack/stack.component';
 import { PortfolioDataService } from '../../../../../core/services/portfolio-data.service';
+import { LocalizationService } from '../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'contact-section',
@@ -13,6 +14,7 @@ import { PortfolioDataService } from '../../../../../core/services/portfolio-dat
 })
 export class ContactSectionComponent {
   private readonly portfolioData = inject(PortfolioDataService);
+  protected readonly localization = inject(LocalizationService);
 
   protected readonly basics = this.portfolioData.basics;
   protected readonly linkedInUrl = computed(
@@ -35,9 +37,14 @@ export class ContactSectionComponent {
     const locationLabel = `${basics.location.city}, ${basics.location.country}`;
 
     return [
-      { label: 'Email', value: basics.email, href: `mailto:${basics.email}`, icon: 'mail' },
       {
-        label: 'Location',
+        label: this.localization.text('contact.email'),
+        value: basics.email,
+        href: `mailto:${basics.email}`,
+        icon: 'mail',
+      },
+      {
+        label: this.localization.text('contact.location'),
         value: locationLabel,
         href: `https://maps.google.com/?q=${encodeURIComponent(locationLabel)}`,
         icon: 'location_on',

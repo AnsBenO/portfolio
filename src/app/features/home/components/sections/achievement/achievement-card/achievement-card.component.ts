@@ -2,6 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { Achievement } from '../../../../../../core/models/achievement.model';
+import { LocalizationService } from '../../../../../../core/i18n/localization.service';
 import { AchievementDialogComponent } from '../achievement-dialog/achievement-dialog.component';
 
 @Component({
@@ -10,7 +11,7 @@ import { AchievementDialogComponent } from '../achievement-dialog/achievement-di
   template: `
     <button
       type="button"
-      class="achievement-card group glass-card relative flex w-full flex-col gap-3 rounded-3xl p-5 text-left sm:p-6"
+      class="achievement-card group glass-card relative flex w-full flex-col gap-3 rounded-3xl p-5 text-start sm:p-6"
       (click)="openDetails()"
     >
       <div class="flex items-center gap-3">
@@ -29,13 +30,14 @@ import { AchievementDialogComponent } from '../achievement-dialog/achievement-di
       </p>
 
       @if (achievement().impact) {
-        <span class="pill-label mt-1 w-fit">Impact</span>
+        <span class="pill-label mt-1 w-fit">{{ localization.text('achievements.impact') }}</span>
       }
     </button>
   `,
 })
 export class AchievementCardComponent {
   private readonly dialog = inject(MatDialog);
+  protected readonly localization = inject(LocalizationService);
 
   achievement = input.required<Achievement>();
 

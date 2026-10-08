@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { computed, effect, inject, Injectable, signal } from '@angular/core';
+import { LocalizationService, Locale, TranslationKey } from '../i18n/localization.service';
 import { Achievement } from '../models/achievement.model';
 import { Experience } from '../models/experience.model';
 import { Project } from '../models/project.model';
@@ -24,6 +25,7 @@ export interface AboutFact {
 @Injectable({ providedIn: 'root' })
 export class PortfolioDataService {
   private readonly http = inject(HttpClient);
+  private readonly localization = inject(LocalizationService);
 
   private readonly dataState = signal<PortfolioData | null>(null);
   private readonly statusState = signal<'idle' | 'loading' | 'ready' | 'error'>('idle');
@@ -56,7 +58,10 @@ export class PortfolioDataService {
           company: workItem.company,
           period: this.formatDateRange(workItem.startDate, workItem.endDate),
           location: workItem.location,
-          summary: `${workItem.position} at ${workItem.company}`,
+          summary: this.localization.text('experience.summaryFallback', {
+            role: workItem.position,
+            company: workItem.company,
+          }),
           highlights: [],
           technologies: [],
         });
@@ -90,53 +95,57 @@ export class PortfolioDataService {
       return [];
     }
 
-    const categoryMap: Array<{ key: keyof PortfolioSkills; title: string; summary: string }> = [
+    const categoryMap: Array<{
+      key: keyof PortfolioSkills;
+      title: TranslationKey;
+      summary: TranslationKey;
+    }> = [
       {
         key: 'programmingLanguages',
-        title: 'Programming Languages',
-        summary: 'Core languages used in production software delivery.',
+        title: 'skills.programmingLanguages',
+        summary: 'skills.programmingLanguagesSummary',
       },
       {
         key: 'backend',
-        title: 'Backend',
-        summary: 'API, platform, and testing capabilities for server-side development.',
+        title: 'skills.backend',
+        summary: 'skills.backendSummary',
       },
       {
         key: 'frontend',
-        title: 'Frontend',
-        summary: 'User-interface frameworks and rendering patterns.',
+        title: 'skills.frontend',
+        summary: 'skills.frontendSummary',
       },
       {
         key: 'databases',
-        title: 'Databases',
-        summary: 'Data modeling and relational persistence technologies.',
+        title: 'skills.databases',
+        summary: 'skills.databasesSummary',
       },
       {
         key: 'devOpsAndTools',
-        title: 'DevOps and Tools',
-        summary: 'Automation, infrastructure, and operational tooling.',
+        title: 'skills.devOpsAndTools',
+        summary: 'skills.devOpsAndToolsSummary',
       },
       {
         key: 'projectManagement',
-        title: 'Project Management',
-        summary: 'Delivery methods and collaboration workflows.',
+        title: 'skills.projectManagement',
+        summary: 'skills.projectManagementSummary',
       },
       {
         key: 'architectureAndDesign',
-        title: 'Architecture and Design',
-        summary: 'Design principles used to shape scalable systems.',
+        title: 'skills.architectureAndDesign',
+        summary: 'skills.architectureAndDesignSummary',
       },
       {
         key: 'maintenanceAndTriaging',
-        title: 'Maintenance and Triaging',
-        summary: 'Production issue handling and service reliability practices.',
+        title: 'skills.maintenanceAndTriaging',
+        summary: 'skills.maintenanceAndTriagingSummary',
       },
     ];
 
     return categoryMap.map((category) => ({
       id: category.key,
-      title: category.title,
-      summary: category.summary,
+      title: this.localization.text(category.title),
+      summary: this.localization.text(category.summary),
       skills: skills[category.key].map((name, index) => ({
         name,
         level: Math.max(64, 92 - index * 4),
@@ -152,10 +161,19 @@ export class PortfolioDataService {
     }
 
     return [
-      { label: 'Role', value: basics.role },
-      { label: 'Location', value: `${basics.location.city}, ${basics.location.country}` },
-      { label: 'Work Projects', value: `${this.experienceEntries().length}` },
-      { label: 'Languages', value: `${this.languages().length}` },
+      { label: this.localization.text('about.factRole'), value: basics.role },
+      {
+        label: this.localization.text('about.factLocation'),
+        value: `${basics.location.city}, ${basics.location.country}`,
+      },
+      {
+        label: this.localization.text('about.factProjects'),
+        value: `${this.experienceEntries().length}`,
+      },
+      {
+        label: this.localization.text('about.factLanguages'),
+        value: `${this.languages().length}`,
+      },
     ];
   });
 
@@ -171,27 +189,28 @@ export class PortfolioDataService {
   });
 
   constructor() {
-    this.load();
+    effect((onCleanup) => {
+      const locale = this.localization.locale();
+      this.load(locale, onCleanup);
+    });
   }
 
-  private load(): void {
-    const status = this.statusState();
-
-    if (status === 'loading' || status === 'ready') {
-      return;
-    }
-
+  private load(locale: Locale, onCleanup: (cleanupFn: () => void) => void): void {
     this.statusState.set('loading');
+    this.dataState.set(null);
 
-    this.http.get<PortfolioData>('data.json').subscribe({
+    const dataPath = locale === 'en' ? 'data.json' : `data.${locale}.json`;
+    const subscription = this.http.get<PortfolioData>(dataPath).subscribe({
       next: (data) => {
         this.dataState.set(data);
         this.statusState.set('ready');
       },
-      error: () => {
+      error: (error: unknown) => {
+        console.error(`Failed to load portfolio data for locale "${locale}"`, error);
         this.statusState.set('error');
       },
     });
+    onCleanup(() => subscription.unsubscribe());
   }
 
   private formatDateRange(start?: string, end?: string): string {
@@ -207,11 +226,11 @@ export class PortfolioDataService {
 
   private formatDate(value?: string): string {
     if (!value) {
-      return 'Present';
+      return this.localization.text('date.present');
     }
 
     if (value.toLowerCase() === 'current') {
-      return 'Present';
+      return this.localization.text('date.present');
     }
 
     const date = new Date(value);
@@ -220,7 +239,10 @@ export class PortfolioDataService {
       return value;
     }
 
-    return new Intl.DateTimeFormat('en', { month: 'short', year: 'numeric' }).format(date);
+    return new Intl.DateTimeFormat(this.localization.locale(), {
+      month: 'short',
+      year: 'numeric',
+    }).format(date);
   }
 
   private slugify(value: string): string {

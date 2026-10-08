@@ -1,0 +1,180 @@
+{
+  "basics": {
+    "name": "Anass Benomar",
+    "title": "Desarrollo full stack y operaciones de TI",
+    "role": "Desarrollo full stack y operaciones de TI",
+    "email": "anas-ben-omar@outlook.com",
+    "location": {
+      "city": "Tetuán",
+      "country": "Marruecos"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "anass-ben-omar-159374274",
+        "url": "https://linkedin.com/in/anass-ben-omar-159374274/"
+      },
+      {
+        "network": "GitHub",
+        "username": "AnsBenO",
+        "url": "https://github.com/AnsBenO"
+      },
+      {
+        "network": "Página personal",
+        "username": "Personal Page",
+        "url": "https://ansbeno.com"
+      }
+    ],
+    "summary": "Desarrollador full stack con experiencia en la creación, optimización y mantenimiento de aplicaciones empresariales. Experiencia en el desarrollo de funcionalidades de negocio robustas con Spring Boot, Angular, SQL y API REST, así como en la investigación profunda de incidentes, el análisis de causas raíz (RCA) y la colaboración con equipos multidisciplinares de desarrollo y operaciones para garantizar una alta disponibilidad."
+  },
+  "work": [
+    {
+      "company": "NTT DATA",
+      "position": "Desarrollador full stack y soporte de producción / gestión de aplicaciones",
+      "location": "Tetuán, Marruecos",
+      "startDate": "2024-05-01",
+      "endDate": "2026-06-10",
+      "projects": [
+        {
+          "name": "Transport Hub – Vehicle Management App",
+          "description": "Plataforma empresarial de gestión de flotas y transporte",
+          "environment": "Agile (Kanban)",
+          "startDate": "",
+          "endDate": "",
+          "highlights": [
+            "Desarrollé funcionalidades empresariales de gestión de flotas con Spring Boot, Angular y PrimeNG para programar informes por correo, seguir las reservas de los usuarios y gestionar la disponibilidad de vehículos en tiempo real.",
+            "Resolví problemas de frontend y backend en toda la aplicación, mejorando su fiabilidad y la experiencia de usuario."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG"]
+        },
+        {
+          "name": "TIM AM – TIM BUSINESS",
+          "description": "Soporte de producción y actividades de DevOps para aplicaciones empresariales",
+          "startDate": "2025-02-07",
+          "endDate": "2026-03-25",
+          "highlights": [
+            "Aseguré la estabilidad de producción mediante la supervisión de aplicaciones, el análisis de incidentes con Kibana y registros, y la colaboración con los equipos para resolver problemas de servicio.",
+            "Mantuve aplicaciones en la nube en Google Cloud Platform (GCP) y Google Kubernetes Engine (GKE), resolviendo problemas de servicios en contenedores y contribuyendo a su alta disponibilidad.",
+            "Mejoré la fiabilidad operativa mediante el mantenimiento de infraestructura, la renovación de certificados SSL, la optimización de caché y mejoras del sistema.",
+            "Apoyé lanzamientos fiables de microservicios backend mediante pipelines Jenkins de integración y entrega continuas (CI/CD).",
+            "Implementé actualizaciones de aplicaciones y contenido de Adobe Experience Manager (AEM) con CRX Package Manager."
+          ],
+          "technologies": [
+            "Google Cloud Platform (GCP)",
+            "Google Kubernetes Engine (GKE)",
+            "Kubernetes",
+            "Jenkins",
+            "Kibana",
+            "Java",
+            "Adobe Experience Manager (AEM)"
+          ]
+        },
+        {
+          "name": "Kafaa'at – Employee Management App",
+          "description": "Plataforma interna de gestión de empleados y proyectos",
+          "environment": "Agile (Kanban)",
+          "startDate": "",
+          "endDate": "",
+          "highlights": [
+            "Desarrollé módulos de gestión de empleados, seguimiento de proyectos y gestión de recursos con Spring Boot, Angular y PrimeNG.",
+            "Creé interfaces de usuario adaptables y mejoré los flujos de trabajo mediante el desarrollo full stack.",
+            "Aumenté la cobertura de pruebas del backend a más del 80 % con pruebas unitarias de JUnit y Mockito, aprovechando el desarrollo asistido por IA para mejorar la eficiencia de las pruebas y mantener la calidad del código."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
+        }
+      ]
+    }
+  ],
+
+  "achievements": [
+    {
+      "project": "TIM AM",
+      "title": "Automatización de tareas recurrentes del equipo",
+      "description": "Creé una aplicación de escritorio en Java para automatizar tareas recurrentes y simplificar actividades operativas repetitivas.",
+      "impact": "Ahorró al equipo aproximadamente una hora de trabajo manual al día."
+    },
+    {
+      "project": "TIM AM",
+      "title": "Resolución de un bloqueo de acceso a GCP",
+      "description": "Investigué y resolví un problema de acceso a GCP que bloqueaba la incorporación. Identifiqué un fallo al iniciar la sesión de terminal del navegador y encontré una alternativa: abrir manualmente la página de bienvenida e inicializar la sesión antes de iniciar sesión desde el terminal local.",
+      "impact": "Desbloqueó la incorporación y permitió que el equipo se hiciera cargo de las tareas relacionadas con GCP."
+    }
+  ],
+  "projects": [
+    {
+      "id": "sql-tutor-web",
+      "title": "SQL Tutor Web",
+      "thumbnailUrl": "sql-tutor.png",
+      "sourceUrl": "https://github.com/AnsBenO/sql-tutor-web"
+    },
+    {
+      "id": "story-corner",
+      "title": "Story Corner",
+      "thumbnailUrl": "story-corner.png",
+      "sourceUrl": "https://github.com/AnsBenO/story-corner"
+    },
+    {
+      "id": "cinema",
+      "title": "Cinema",
+      "thumbnailUrl": "cinema.png",
+      "sourceUrl": "https://github.com/AnsBenO/cinema"
+    }
+  ],
+  "skills": {
+    "programmingLanguages": ["Java", "TypeScript", "JavaScript", "SQL", "Python", "HTML5", "CSS3"],
+    "backend": [
+      "Spring Boot",
+      "API REST",
+      "Jakarta EE",
+      "JUnit",
+      "Mockito",
+      "Node.js (Express.js)"
+    ],
+    "frontend": ["Angular", "React", "Thymeleaf", "HTMX"],
+    "databases": ["PostgreSQL", "Oracle Database", "MySQL"],
+    "devOpsAndTools": [
+      "Git",
+      "Maven",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Kibana",
+      "Interfaz de línea de comandos de Linux (CLI)",
+      "Google Kubernetes Engine (GKE)",
+      "Google Cloud Platform (GCP)"
+    ],
+    "projectManagement": ["Jira", "Agile", "Scrum", "Kanban"],
+    "architectureAndDesign": [
+      "Programación orientada a objetos (POO)",
+      "Patrones de diseño",
+      "Modelado con UML",
+      "Diseño de bases de datos",
+      "Arquitectura de microservicios"
+    ],
+    "maintenanceAndTriaging": [
+      "Investigación de incidentes",
+      "Análisis de causas raíz (RCA)",
+      "Análisis de registros",
+      "Supervisión de aplicaciones",
+      "Resolución de problemas"
+    ]
+  },
+  "languages": [
+    {
+      "language": "Árabe",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Inglés",
+      "fluency": "Dominio profesional completo (C1)"
+    },
+    {
+      "language": "Francés",
+      "fluency": "Competencia profesional (B2)"
+    },
+    {
+      "language": "Español",
+      "fluency": "Competencia profesional (B2)"
+    }
+  ]
+}

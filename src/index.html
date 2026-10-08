@@ -16,12 +16,16 @@
     (() => {
       const storageKey = 'theme-preference';
       const paletteStorageKey = 'theme-palette';
+      const localeStorageKey = 'ui-locale';
       const storedTheme = localStorage.getItem(storageKey);
       const storedPalette = localStorage.getItem(paletteStorageKey);
+      const storedLocale = localStorage.getItem(localeStorageKey);
       const palettes = ['ocean', 'forest', 'violet'];
+      const locales = ['en', 'fr', 'ar', 'es'];
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       let resolvedTheme = prefersDark ? 'dark' : 'light';
       const resolvedPalette = palettes.includes(storedPalette) ? storedPalette : 'ocean';
+      const resolvedLocale = locales.includes(storedLocale) ? storedLocale : 'en';
 
       if (storedTheme === 'dark' || storedTheme === 'light') {
         resolvedTheme = storedTheme;
@@ -31,6 +35,8 @@
       document.documentElement.dataset.theme = resolvedTheme;
       document.documentElement.dataset.palette = resolvedPalette;
       document.documentElement.style.colorScheme = resolvedTheme;
+      document.documentElement.lang = resolvedLocale;
+      document.documentElement.dir = resolvedLocale === 'ar' ? 'rtl' : 'ltr';
     })();
   </script>
 </head>

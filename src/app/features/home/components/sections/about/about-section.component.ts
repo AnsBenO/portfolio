@@ -5,6 +5,7 @@ import { StackComponent } from '../../../../../shared/layout/stack/stack.compone
 import { GlassCardComponent } from '../../../../../shared/ui/glass-card/glass-card.component';
 import { TechnologyChipComponent } from '../../../../../shared/ui/technology-chip/technology-chip.component';
 import { PortfolioDataService } from '../../../../../core/services/portfolio-data.service';
+import { LocalizationService } from '../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'about-section',
@@ -19,6 +20,7 @@ import { PortfolioDataService } from '../../../../../core/services/portfolio-dat
 })
 export class AboutSectionComponent {
   private readonly portfolioData = inject(PortfolioDataService);
+  protected readonly localization = inject(LocalizationService);
 
   protected readonly basics = this.portfolioData.basics;
   protected readonly topTechnologies = this.portfolioData.topTechnologies;

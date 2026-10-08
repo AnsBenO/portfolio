@@ -7,6 +7,7 @@ import {
 } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { Achievement } from '../../../../../../core/models/achievement.model';
+import { LocalizationService } from '../../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'achievement-dialog',
@@ -29,7 +30,7 @@ import { Achievement } from '../../../../../../core/models/achievement.model';
       <button
         type="button"
         mat-icon-button
-        aria-label="Close dialog"
+        [attr.aria-label]="localization.text('a11y.closeDialog')"
         [mat-dialog-close]="true"
       >
         <mat-icon>close</mat-icon>
@@ -43,7 +44,7 @@ import { Achievement } from '../../../../../../core/models/achievement.model';
         <div
           class="mt-4 rounded-2xl border border-[rgba(var(--border-rgb),0.28)] bg-[rgba(var(--surface-strong-rgb),0.38)] p-4"
         >
-          <p class="eyebrow">Impact</p>
+          <p class="eyebrow">{{ localization.text('achievements.impact') }}</p>
           <p class="mt-1 text-[hsl(var(--text-1))]">{{ data.impact }}</p>
         </div>
       }
@@ -51,7 +52,7 @@ import { Achievement } from '../../../../../../core/models/achievement.model';
 
     <mat-dialog-actions align="end">
       <button type="button" mat-button class="glass-ghost-button" [mat-dialog-close]="true">
-        Close
+        {{ localization.text('achievements.close') }}
       </button>
     </mat-dialog-actions>
   `,
@@ -59,4 +60,5 @@ import { Achievement } from '../../../../../../core/models/achievement.model';
 export class AchievementDialogComponent {
   protected readonly dialogRef = inject(MatDialogRef<AchievementDialogComponent>);
   protected readonly data: Achievement = inject(MAT_DIALOG_DATA);
+  protected readonly localization = inject(LocalizationService);
 }

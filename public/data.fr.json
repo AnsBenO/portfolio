@@ -1,0 +1,180 @@
+{
+  "basics": {
+    "name": "Anass Benomar",
+    "title": "Développement full stack et opérations informatiques",
+    "role": "Développement full stack et opérations informatiques",
+    "email": "anas-ben-omar@outlook.com",
+    "location": {
+      "city": "Tétouan",
+      "country": "Maroc"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "anass-ben-omar-159374274",
+        "url": "https://linkedin.com/in/anass-ben-omar-159374274/"
+      },
+      {
+        "network": "GitHub",
+        "username": "AnsBenO",
+        "url": "https://github.com/AnsBenO"
+      },
+      {
+        "network": "Page personnelle",
+        "username": "Personal Page",
+        "url": "https://ansbeno.com"
+      }
+    ],
+    "summary": "Développeur full stack expérimenté dans la création, l’optimisation et la maintenance d’applications d’entreprise. Expérience dans le développement de fonctionnalités métier robustes avec Spring Boot, Angular, SQL et des API REST, ainsi que dans l’analyse approfondie d’incidents, la recherche des causes racines (RCA) et la collaboration avec des équipes de développement et d’exploitation afin de garantir une haute disponibilité des applications."
+  },
+  "work": [
+    {
+      "company": "NTT DATA",
+      "position": "Développeur full stack et support de production / gestion des applications",
+      "location": "Tétouan, Maroc",
+      "startDate": "2024-05-01",
+      "endDate": "2026-06-10",
+      "projects": [
+        {
+          "name": "Transport Hub – Vehicle Management App",
+          "description": "Plateforme d’entreprise de gestion de flotte et de transport",
+          "environment": "Agile (Kanban)",
+          "startDate": "",
+          "endDate": "",
+          "highlights": [
+            "Développement de fonctionnalités de gestion de flotte avec Spring Boot, Angular et PrimeNG : envoi programmé de rapports par e-mail, suivi des réservations des utilisateurs et gestion en temps réel de la disponibilité des véhicules.",
+            "Résolution de problèmes front-end et back-end sur l’ensemble de la pile applicative, améliorant sa fiabilité et l’expérience utilisateur."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG"]
+        },
+        {
+          "name": "TIM AM – TIM BUSINESS",
+          "description": "Support de production et activités DevOps pour des applications d’entreprise",
+          "startDate": "2025-02-07",
+          "endDate": "2026-03-25",
+          "highlights": [
+            "Garantie de la stabilité de la production par la supervision des applications, l’analyse des incidents avec Kibana et les journaux, et la collaboration avec les équipes pour résoudre les problèmes de service.",
+            "Maintenance d’applications cloud sur Google Cloud Platform (GCP) et Google Kubernetes Engine (GKE), dépannage de services conteneurisés et contribution à leur haute disponibilité.",
+            "Amélioration de la fiabilité opérationnelle grâce à la maintenance de l’infrastructure, au renouvellement des certificats SSL, à l’optimisation du cache et à des améliorations système.",
+            "Contribution à des mises en production fiables de microservices back-end via les pipelines Jenkins CI/CD.",
+            "Déploiement de mises à jour d’applications et de contenu Adobe Experience Manager (AEM) avec CRX Package Manager."
+          ],
+          "technologies": [
+            "Google Cloud Platform (GCP)",
+            "Google Kubernetes Engine (GKE)",
+            "Kubernetes",
+            "Jenkins",
+            "Kibana",
+            "Java",
+            "Adobe Experience Manager (AEM)"
+          ]
+        },
+        {
+          "name": "Kafaa'at – Employee Management App",
+          "description": "Plateforme interne de gestion des employés et des projets",
+          "environment": "Agile (Kanban)",
+          "startDate": "",
+          "endDate": "",
+          "highlights": [
+            "Développement de modules de gestion des employés, de suivi de projets et de gestion des ressources avec Spring Boot, Angular et PrimeNG.",
+            "Création d’interfaces utilisateur adaptatives et amélioration des processus métier grâce au développement full stack.",
+            "Augmentation de la couverture des tests back-end à plus de 80 % avec des tests unitaires JUnit et Mockito, en tirant parti du développement assisté par l’IA pour améliorer l’efficacité des tests et maintenir la qualité du code."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
+        }
+      ]
+    }
+  ],
+
+  "achievements": [
+    {
+      "project": "TIM AM",
+      "title": "Automatisation des tâches récurrentes de l’équipe",
+      "description": "Création d’une application de bureau Java pour automatiser les tâches récurrentes et simplifier les activités opérationnelles répétitives.",
+      "impact": "Environ une heure de travail manuel économisée par jour pour l’équipe."
+    },
+    {
+      "project": "TIM AM",
+      "title": "Résolution d’un blocage d’accès à GCP",
+      "description": "Analyse et résolution d’un problème d’accès à GCP qui bloquait l’intégration. Identification d’un problème d’initialisation de la session du terminal dans le navigateur, puis mise en place d’une solution de contournement en ouvrant manuellement la page d’accueil et en initialisant la session avant de se connecter depuis le terminal local.",
+      "impact": "Déblocage de l’intégration et prise en charge des tâches liées à GCP par l’équipe."
+    }
+  ],
+  "projects": [
+    {
+      "id": "sql-tutor-web",
+      "title": "SQL Tutor Web",
+      "thumbnailUrl": "sql-tutor.png",
+      "sourceUrl": "https://github.com/AnsBenO/sql-tutor-web"
+    },
+    {
+      "id": "story-corner",
+      "title": "Story Corner",
+      "thumbnailUrl": "story-corner.png",
+      "sourceUrl": "https://github.com/AnsBenO/story-corner"
+    },
+    {
+      "id": "cinema",
+      "title": "Cinema",
+      "thumbnailUrl": "cinema.png",
+      "sourceUrl": "https://github.com/AnsBenO/cinema"
+    }
+  ],
+  "skills": {
+    "programmingLanguages": ["Java", "TypeScript", "JavaScript", "SQL", "Python", "HTML5", "CSS3"],
+    "backend": [
+      "Spring Boot",
+      "API REST",
+      "Jakarta EE",
+      "JUnit",
+      "Mockito",
+      "Node.js (Express.js)"
+    ],
+    "frontend": ["Angular", "React", "Thymeleaf", "HTMX"],
+    "databases": ["PostgreSQL", "Oracle Database", "MySQL"],
+    "devOpsAndTools": [
+      "Git",
+      "Maven",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Kibana",
+      "Interface en ligne de commande Linux (CLI)",
+      "Google Kubernetes Engine (GKE)",
+      "Google Cloud Platform (GCP)"
+    ],
+    "projectManagement": ["Jira", "Agile", "Scrum", "Kanban"],
+    "architectureAndDesign": [
+      "Programmation orientée objet (POO)",
+      "Patrons de conception",
+      "Modélisation en langage UML",
+      "Conception de bases de données",
+      "Architecture de microservices"
+    ],
+    "maintenanceAndTriaging": [
+      "Analyse d’incidents",
+      "Analyse des causes racines (RCA)",
+      "Analyse des journaux",
+      "Supervision des applications",
+      "Dépannage"
+    ]
+  },
+  "languages": [
+    {
+      "language": "Arabe",
+      "fluency": "Langue maternelle"
+    },
+    {
+      "language": "Anglais",
+      "fluency": "Maîtrise professionnelle complète (C1)"
+    },
+    {
+      "language": "Français",
+      "fluency": "Niveau professionnel opérationnel (B2)"
+    },
+    {
+      "language": "Espagnol",
+      "fluency": "Niveau professionnel opérationnel (B2)"
+    }
+  ]
+}

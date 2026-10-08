@@ -2,12 +2,12 @@
       <ui-glass-card padding="lg" radius="3xl">
             <ui-stack gap="6">
                   <div>
-                        <p class="eyebrow">Contact</p>
+                        <p class="eyebrow">{{ localization.text('contact.eyebrow') }}</p>
                         <h2 class="mt-1 text-2xl font-semibold tracking-tight text-[hsl(var(--text-1))] sm:text-3xl">
-                              Let's connect
+                              {{ localization.text('contact.title') }}
                         </h2>
                         <p class="mt-2 text-sm text-[hsl(var(--text-2))]">
-                              Reach out through email or social profiles for collaboration opportunities.
+                              {{ localization.text('contact.subtitle') }}
                         </p>
                   </div>
 
@@ -29,8 +29,9 @@
                         </ul>
 
                         <div class="flex flex-wrap items-start gap-2">
-                              <ui-button variant="primary" [link]="mailLink()" [external]="true" icon="mail">Start a
-                                    Conversation</ui-button>
+                              <ui-button variant="primary" [link]="mailLink()" [external]="true" icon="mail">
+                                    {{ localization.text('contact.startConversation') }}
+                              </ui-button>
                               @if (linkedInUrl()) {
                               <ui-button variant="secondary" [link]="linkedInUrl()" [external]="true"
                                     icon="groups">LinkedIn</ui-button>

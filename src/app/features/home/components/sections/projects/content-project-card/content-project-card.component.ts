@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Project } from '../../../../../../core/models/project.model';
 import { TechnologyChipComponent } from '../../../../../../shared/ui/technology-chip/technology-chip.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LocalizationService } from '../../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'content-project-card',
@@ -10,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class ContentProjectCard {
   project = input.required<Project>();
+  protected readonly localization = inject(LocalizationService);
 
   goToSource() {
     const url = this.project().sourceUrl;

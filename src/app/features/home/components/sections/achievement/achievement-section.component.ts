@@ -3,6 +3,7 @@ import { PortfolioDataService } from '../../../../../core/services/portfolio-dat
 import { SectionContainerComponent } from '../../../../../shared/layout/section-container/section-container.component';
 import { SectionHeaderComponent } from '../../../../../shared/layout/section-header/section-header.component';
 import { AchievementCardComponent } from './achievement-card/achievement-card.component';
+import { LocalizationService } from '../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'achievement-section',
@@ -11,6 +12,7 @@ import { AchievementCardComponent } from './achievement-card/achievement-card.co
 })
 export class AchievementSectionComponent {
   private readonly portfolioData = inject(PortfolioDataService);
+  protected readonly localization = inject(LocalizationService);
 
   protected readonly achievements = this.portfolioData.achievements;
 }

@@ -3,6 +3,7 @@ import { ExperienceCardComponent } from './experience-card/experience-card.compo
 import { SectionContainerComponent } from '../../../../../shared/layout/section-container/section-container.component';
 import { SectionHeaderComponent } from '../../../../../shared/layout/section-header/section-header.component';
 import { PortfolioDataService } from '../../../../../core/services/portfolio-data.service';
+import { LocalizationService } from '../../../../../core/i18n/localization.service';
 
 @Component({
   selector: 'experience-section',
@@ -11,6 +12,7 @@ import { PortfolioDataService } from '../../../../../core/services/portfolio-dat
 })
 export class ExperienceSectionComponent {
   private readonly portfolioData = inject(PortfolioDataService);
+  protected readonly localization = inject(LocalizationService);
 
   protected readonly experienceHighlights = this.portfolioData.experienceEntries;
 }

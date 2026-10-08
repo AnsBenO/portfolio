@@ -3,9 +3,9 @@
 
     <!-- Header -->
     <ui-section-header
-      eyebrow="GitHub Analytics"
-      title="Development activity"
-      subtitle="An overview of my projects, repositories, and activity on GitHub.">
+      [eyebrow]="localization.text('github.eyebrow')"
+      [title]="localization.text('github.title')"
+      [subtitle]="localization.text('github.subtitle')">
     </ui-section-header>
 
 
@@ -13,11 +13,13 @@
       <div class="mb-4 rounded-lg border border-[rgba(var(--border-rgb),0.24)] bg-[rgba(var(--surface-strong-rgb),0.36)] p-4 text-sm text-[hsl(var(--text-2))]">
         <div class="flex items-center justify-between gap-4">
           <div>
-            <strong>Unable to load GitHub data.</strong>
-            <div class="mt-1">{{ errorMessage }}</div>
+            <strong>{{ localization.text('github.errorTitle') }}</strong>
+            <div class="mt-1">{{ localization.text('github.errorMessage') }}</div>
           </div>
           <div class="flex items-center gap-2">
-            <button class="glass-cta-button" type="button" (click)="loadGithubStatistics()">Retry</button>
+            <button class="glass-cta-button" type="button" (click)="loadGithubStatistics()">
+              {{ localization.text('github.retry') }}
+            </button>
           </div>
         </div>
       </div>
@@ -27,28 +29,28 @@
     <ui-grid columns="two" gap="4">
 
       <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
-        <p class="section-kicker eyebrow">01 / Repositories</p>
+        <p class="section-kicker eyebrow">{{ localization.text('github.repositories') }}</p>
         <p class="mt-3 text-4xl font-semibold tracking-tight">
           {{ publicRepos }}
         </p>
       </ui-section-container>
 
       <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
-        <p class="section-kicker eyebrow">02 / Audience</p>
+        <p class="section-kicker eyebrow">{{ localization.text('github.audience') }}</p>
         <p class="mt-3 text-4xl font-semibold tracking-tight">
           {{ followers }}
         </p>
       </ui-section-container>
 
       <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
-        <p class="section-kicker eyebrow">03 / Network</p>
+        <p class="section-kicker eyebrow">{{ localization.text('github.network') }}</p>
         <p class="mt-3 text-4xl font-semibold tracking-tight">
           {{ following }}
         </p>
       </ui-section-container>
 
       <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
-        <p class="section-kicker eyebrow">04 / Signal</p>
+        <p class="section-kicker eyebrow">{{ localization.text('github.signal') }}</p>
         <p class="mt-3 text-4xl font-semibold tracking-tight">
           {{ totalStars }}
         </p>
@@ -62,11 +64,11 @@
 
       <div class="chart-heading mb-6">
         <h2 class="text-lg font-semibold">
-          Contribution activity
+          {{ localization.text('github.contributions') }}
         </h2>
 
         <p class="mt-1 text-sm opacity-70">
-          Development activity across public repositories.
+          {{ localization.text('github.contributionsSubtitle') }}
         </p>
       </div>
 
@@ -90,11 +92,11 @@
 
         <div class="chart-heading mb-6">
           <h2 class="text-lg font-semibold">
-            Repository popularity
+            {{ localization.text('github.popularity') }}
           </h2>
 
           <p class="mt-1 text-sm opacity-70">
-            Repositories ranked by stars.
+            {{ localization.text('github.starsSubtitle') }}
           </p>
         </div>
 
@@ -115,11 +117,11 @@
 
         <div class="chart-heading mb-6">
           <h2 class="text-lg font-semibold">
-            Languages
+            {{ localization.text('github.languages') }}
           </h2>
 
           <p class="mt-1 text-sm opacity-70">
-            Languages used across public repositories.
+            {{ localization.text('github.languagesSubtitle') }}
           </p>
         </div>
 
@@ -142,11 +144,11 @@
 
       <div class="chart-heading mb-6">
         <h2 class="text-lg font-semibold">
-          Code activity
+          {{ localization.text('github.codeActivity') }}
         </h2>
 
         <p class="mt-1 text-sm opacity-70">
-          Additions and deletions over time.
+          {{ localization.text('github.codeActivitySubtitle') }}
         </p>
       </div>
 

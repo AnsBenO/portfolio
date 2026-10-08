@@ -1,7 +1,8 @@
 <section id="achievements" class="section-screen section-anchor">
       <ui-section-container [glass]="true" rounded="3xl" spacing="lg">
-            <ui-section-header eyebrow="Achievements" title="Notable Wins"
-                  subtitle="Concrete outcomes delivered while investigating issues and shipping improvements."></ui-section-header>
+            <ui-section-header [eyebrow]="localization.text('achievements.eyebrow')"
+                  [title]="localization.text('achievements.title')"
+                  [subtitle]="localization.text('achievements.subtitle')"></ui-section-header>
 
             @if (achievements().length > 0) {
             <div class="mt-6 grid gap-4 sm:grid-cols-2">

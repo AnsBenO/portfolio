@@ -6,7 +6,8 @@
                               <div class="profile-photo-gradient absolute inset-0"></div>
                               <div
                                     class="absolute inset-0 flex items-end justify-center bg-[radial-gradient(circle_at_50%_8%,rgba(var(--brand-rgb),0.18),transparent_56%)]">
-                                    <img src="profile-pic.png" alt="Profile portrait" class="profile-picture" />
+                                    <img src="profile-pic.png" [alt]="localization.text('a11y.profilePortrait')"
+                                          class="profile-picture" />
                               </div>
                               <div
                                     class="absolute -bottom-8 left-1/2 h-18 w-[130%] -translate-x-1/2 rounded-[50%] bg-[hsl(var(--surface-1))]">
@@ -18,13 +19,15 @@
                                     class="mt-2 text-3xl font-semibold tracking-tight text-[hsl(var(--text-1))] sm:text-4xl">
                                     {{ basics()?.name ?? 'Portfolio' }}
                               </h1>
-                              <p class="eyebrow">{{ basics()?.role ?? 'Role' }}</p>
+                              <p class="eyebrow">{{ basics()?.role ?? localization.text('common.role') }}</p>
 
                               <div class="mt-5 flex items-center justify-center gap-3">
-                                    <ui-icon-button ariaLabel="Send email" size="md" [link]="mailLink()"
+                                    <ui-icon-button [ariaLabel]="localization.text('a11y.sendEmail')" size="md" [link]="mailLink()"
                                           [external]="true" icon="mail"></ui-icon-button>
                                     @for (profile of profiles(); track profile.url) {
-                                    <ui-icon-button [ariaLabel]="'Open ' + profile.network + ' profile'" size="md"
+                                    <ui-icon-button
+                                          [ariaLabel]="localization.text('a11y.openProfile', { network: profile.network })"
+                                          size="md"
                                           [link]="profile.url" [external]="true" [svgIcon]="svgIconForProfile(profile)"
                                           [icon]="fallbackIconForProfile(profile)"></ui-icon-button>
                                     }
@@ -37,25 +40,25 @@
                   <article class="intro-copy rounded-[1.4rem] p-1">
                   <ui-stack gap="6">
                         <div>
-                              <p class="eyebrow section-kicker">Quick Intro</p>
+                              <p class="eyebrow section-kicker">{{ localization.text('intro.quick') }}</p>
                         </div>
 
                         <p class="text-sm leading-relaxed text-[hsl(var(--text-2))] sm:text-base">
-                              {{ basics()?.summary ?? 'Profile summary loading...' }}
+                              {{ basics()?.summary ?? localization.text('about.summaryLoading') }}
                         </p>
 
                         <div class="flex flex-wrap gap-2">
                               <ui-button variant="primary" link="#experience">
                                     <mat-icon class="text-base">timeline</mat-icon>
-                                    View Experience
+                                    {{ localization.text('intro.viewExperience') }}
                               </ui-button>
                               <ui-button variant="secondary" link="#contact">
                                     <mat-icon class="text-base">alternate_email</mat-icon>
-                                    Let's Connect
+                                    {{ localization.text('intro.connect') }}
                               </ui-button>
                               <ui-button (click)="generateResume()" variant="secondary" >
                                     <mat-icon class="text-base">download</mat-icon>
-                                    Download CV
+                                    {{ localization.text('intro.downloadCv') }}
                               </ui-button>
                         </div>
                   </ui-stack>

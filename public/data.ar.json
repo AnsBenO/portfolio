@@ -1,0 +1,180 @@
+{
+  "basics": {
+    "name": "انس بن عمر",
+    "title": "تطوير متكامل وعمليات تقنية المعلومات",
+    "role": "تطوير متكامل وعمليات تقنية المعلومات",
+    "email": "anas-ben-omar@outlook.com",
+    "location": {
+      "city": "تطوان",
+      "country": "المغرب"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "anass-ben-omar-159374274",
+        "url": "https://linkedin.com/in/anass-ben-omar-159374274/"
+      },
+      {
+        "network": "GitHub",
+        "username": "AnsBenO",
+        "url": "https://github.com/AnsBenO"
+      },
+      {
+        "network": "الموقع الشخصي",
+        "username": "Personal Page",
+        "url": "https://ansbeno.com"
+      }
+    ],
+    "summary": "مطوّر متكامل ذو خبرة في بناء تطبيقات المؤسسات وتحسينها وصيانتها. أمتلك خبرة في تطوير ميزات أعمال موثوقة باستخدام Spring Boot وAngular وSQL وواجهات REST، إلى جانب التحقيق المتعمق في الحوادث وتحليل الأسباب الجذرية (RCA) والتعاون مع فرق التطوير والعمليات متعددة التخصصات لضمان توفر التطبيقات بدرجة عالية."
+  },
+  "work": [
+    {
+      "company": "NTT DATA",
+      "position": "مطوّر متكامل ودعم الإنتاج / إدارة التطبيقات",
+      "location": "تطوان، المغرب",
+      "startDate": "2024-05-01",
+      "endDate": "2026-06-10",
+      "projects": [
+        {
+          "name": "Transport Hub – Vehicle Management App",
+          "description": "منصة مؤسسية لإدارة الأساطيل والنقل",
+          "environment": "Agile (Kanban)",
+          "startDate": "",
+          "endDate": "",
+          "highlights": [
+            "تطوير ميزات مؤسسية لإدارة الأساطيل باستخدام Spring Boot وAngular وPrimeNG، بما يتيح إرسال التقارير المجدولة عبر البريد الإلكتروني وتتبع إجراءات حجز المستخدمين وإدارة توفر المركبات في الوقت الفعلي.",
+            "معالجة مشكلات الواجهات الأمامية والخلفية عبر مكونات التطبيق، مما عزز الموثوقية وتجربة المستخدم."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG"]
+        },
+        {
+          "name": "TIM AM – TIM BUSINESS",
+          "description": "دعم الإنتاج وأنشطة DevOps لتطبيقات المؤسسات",
+          "startDate": "2025-02-07",
+          "endDate": "2026-03-25",
+          "highlights": [
+            "ضمان استقرار بيئة الإنتاج من خلال مراقبة التطبيقات وتحليل الحوادث باستخدام Kibana والسجلات والتعاون مع الفرق لمعالجة مشكلات الخدمات.",
+            "صيانة التطبيقات السحابية على Google Cloud Platform (GCP) وGoogle Kubernetes Engine (GKE)، ومعالجة أعطال الخدمات المحوّاة ودعم التوفر العالي.",
+            "تحسين الموثوقية التشغيلية عبر صيانة البنية التحتية وتجديد شهادات SSL وتحسين التخزين المؤقت وإجراء تحسينات للنظام.",
+            "دعم إصدارات موثوقة للخدمات المصغرة الخلفية عبر مسارات Jenkins للتكامل والتسليم المستمر (CI/CD).",
+            "تنفيذ تحديثات تطبيقات ومحتوى Adobe Experience Manager (AEM) باستخدام CRX Package Manager."
+          ],
+          "technologies": [
+            "Google Cloud Platform (GCP)",
+            "Google Kubernetes Engine (GKE)",
+            "Kubernetes",
+            "Jenkins",
+            "Kibana",
+            "Java",
+            "Adobe Experience Manager (AEM)"
+          ]
+        },
+        {
+          "name": "Kafaa'at – Employee Management App",
+          "description": "منصة داخلية لإدارة الموظفين والمشاريع",
+          "environment": "Agile (Kanban)",
+          "startDate": "",
+          "endDate": "",
+          "highlights": [
+            "تطوير وحدات لإدارة الموظفين وتتبع المشاريع ومجمع الموارد باستخدام Spring Boot وAngular وPrimeNG.",
+            "إنشاء واجهات مستخدم متجاوبة وتحسين إجراءات العمل من خلال التطوير المتكامل.",
+            "رفع تغطية اختبارات الواجهة الخلفية إلى أكثر من 80% عبر تنفيذ اختبارات JUnit وMockito، والاستفادة من التطوير المدعوم بالذكاء الاصطناعي لزيادة كفاءة إعداد الاختبارات والحفاظ على جودة الشيفرة."
+          ],
+          "technologies": ["Spring Boot", "Angular", "PrimeNG", "Flyway", "JUnit", "Mockito"]
+        }
+      ]
+    }
+  ],
+
+  "achievements": [
+    {
+      "project": "TIM AM",
+      "title": "أتمتة المهام المتكررة للفريق",
+      "description": "إنشاء تطبيق مكتبي بلغة Java لأتمتة المهام المتكررة وتبسيط الأنشطة التشغيلية المتكررة.",
+      "impact": "توفير نحو ساعة من العمل اليدوي للفريق يومياً."
+    },
+    {
+      "project": "TIM AM",
+      "title": "حل مشكلة أعاقت الوصول إلى GCP",
+      "description": "التحقيق في مشكلة وصول إلى GCP كانت تعيق تهيئة المستخدمين الجدد وحلها. تم تحديد خلل في تهيئة جلسة الطرفية داخل المتصفح، ثم إيجاد حل مؤقت بفتح صفحة الترحيب يدوياً وتهيئة الجلسة قبل تسجيل الدخول عبر الطرفية المحلية.",
+      "impact": "إزالة عائق التهيئة وتمكين الفريق من تولي المهام المتعلقة بـ GCP."
+    }
+  ],
+  "projects": [
+    {
+      "id": "sql-tutor-web",
+      "title": "SQL Tutor Web",
+      "thumbnailUrl": "sql-tutor.png",
+      "sourceUrl": "https://github.com/AnsBenO/sql-tutor-web"
+    },
+    {
+      "id": "story-corner",
+      "title": "Story Corner",
+      "thumbnailUrl": "story-corner.png",
+      "sourceUrl": "https://github.com/AnsBenO/story-corner"
+    },
+    {
+      "id": "cinema",
+      "title": "Cinema",
+      "thumbnailUrl": "cinema.png",
+      "sourceUrl": "https://github.com/AnsBenO/cinema"
+    }
+  ],
+  "skills": {
+    "programmingLanguages": ["Java", "TypeScript", "JavaScript", "SQL", "Python", "HTML5", "CSS3"],
+    "backend": [
+      "Spring Boot",
+      "واجهات REST",
+      "Jakarta EE",
+      "JUnit",
+      "Mockito",
+      "Node.js (Express.js)"
+    ],
+    "frontend": ["Angular", "React", "Thymeleaf", "HTMX"],
+    "databases": ["PostgreSQL", "Oracle Database", "MySQL"],
+    "devOpsAndTools": [
+      "Git",
+      "Maven",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Kibana",
+      "واجهة سطر أوامر Linux (CLI)",
+      "Google Kubernetes Engine (GKE)",
+      "Google Cloud Platform (GCP)"
+    ],
+    "projectManagement": ["Jira", "Agile", "Scrum", "Kanban"],
+    "architectureAndDesign": [
+      "البرمجة كائنية التوجه (OOP)",
+      "أنماط التصميم",
+      "النمذجة باستخدام UML",
+      "تصميم قواعد البيانات",
+      "هندسة الخدمات المصغرة"
+    ],
+    "maintenanceAndTriaging": [
+      "التحقيق في الحوادث",
+      "تحليل الأسباب الجذرية (RCA)",
+      "تحليل السجلات",
+      "مراقبة التطبيقات",
+      "استكشاف الأخطاء وإصلاحها"
+    ]
+  },
+  "languages": [
+    {
+      "language": "العربية",
+      "fluency": "اللغة الأم"
+    },
+    {
+      "language": "الإنجليزية",
+      "fluency": "إتقان مهني كامل (C1)"
+    },
+    {
+      "language": "الفرنسية",
+      "fluency": "إتقان مهني (B2)"
+    },
+    {
+      "language": "الإسبانية",
+      "fluency": "إتقان مهني (B2)"
+    }
+  ]
+}
