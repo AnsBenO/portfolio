@@ -4,7 +4,10 @@ import { SectionContainerComponent } from '../../../../../shared/layout/section-
 import { SectionHeaderComponent } from '../../../../../shared/layout/section-header/section-header.component';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData } from 'chart.js';
-import { GithubStatisticsService, GithubStats } from '../../../../../core/services/github-statistics.service';
+import {
+  GithubStatisticsService,
+  GithubStats,
+} from '../../../../../core/services/github-statistics.service';
 import { LocalizationService } from '../../../../../core/i18n/localization.service';
 
 @Component({

@@ -1,16 +1,17 @@
 <section id="github-statistics" class="section-screen section-anchor">
   <ui-section-container [glass]="true" rounded="3xl" spacing="xl">
-
     <!-- Header -->
     <ui-section-header
       [eyebrow]="localization.text('github.eyebrow')"
       [title]="localization.text('github.title')"
-      [subtitle]="localization.text('github.subtitle')">
+      [subtitle]="localization.text('github.subtitle')"
+    >
     </ui-section-header>
 
-
     @if (hasError) {
-      <div class="mb-4 rounded-lg border border-[rgba(var(--border-rgb),0.24)] bg-[rgba(var(--surface-strong-rgb),0.36)] p-4 text-sm text-[hsl(var(--text-2))]">
+      <div
+        class="mb-4 rounded-lg border border-[rgba(var(--border-rgb),0.24)] bg-[rgba(var(--surface-strong-rgb),0.36)] p-4 text-sm text-[hsl(var(--text-2))]"
+      >
         <div class="flex items-center justify-between gap-4">
           <div>
             <strong>{{ localization.text('github.errorTitle') }}</strong>
@@ -23,11 +24,10 @@
           </div>
         </div>
       </div>
-    } 
+    }
 
     <!-- Overview -->
     <ui-grid columns="two" gap="4">
-
       <ui-section-container spacing="md" rounded="2xl" class="metric-tile">
         <p class="section-kicker eyebrow">{{ localization.text('github.repositories') }}</p>
         <p class="mt-3 text-4xl font-semibold tracking-tight">
@@ -55,13 +55,10 @@
           {{ totalStars }}
         </p>
       </ui-section-container>
-
     </ui-grid>
-
 
     <!-- Contribution Activity -->
     <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
-
       <div class="chart-heading mb-6">
         <h2 class="text-lg font-semibold">
           {{ localization.text('github.contributions') }}
@@ -73,23 +70,15 @@
       </div>
 
       <div class="relative h-72 w-full">
-        <canvas
-          baseChart
-          [type]="'line'"
-          [data]="contributionData"
-          [options]="contributionOptions">
+        <canvas baseChart [type]="'line'" [data]="contributionData" [options]="contributionOptions">
         </canvas>
       </div>
-
     </ui-section-container>
-
 
     <!-- Repository & Languages -->
     <ui-grid columns="two" gap="6">
-
       <!-- Repository Popularity -->
       <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
-
         <div class="chart-heading mb-6">
           <h2 class="text-lg font-semibold">
             {{ localization.text('github.popularity') }}
@@ -105,16 +94,14 @@
             baseChart
             [type]="'bar'"
             [data]="repositoryStarsData"
-            [options]="repositoryStarsOptions">
+            [options]="repositoryStarsOptions"
+          >
           </canvas>
         </div>
-
       </ui-section-container>
-
 
       <!-- Languages -->
       <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
-
         <div class="chart-heading mb-6">
           <h2 class="text-lg font-semibold">
             {{ localization.text('github.languages') }}
@@ -126,22 +113,14 @@
         </div>
 
         <div class="relative h-80 w-full">
-          <canvas
-            baseChart
-            [type]="'doughnut'"
-            [data]="languagesData"
-            [options]="languagesOptions">
+          <canvas baseChart [type]="'doughnut'" [data]="languagesData" [options]="languagesOptions">
           </canvas>
         </div>
-
       </ui-section-container>
-
     </ui-grid>
-
 
     <!-- Code Activity -->
     <ui-section-container spacing="md" rounded="2xl" class="analytics-surface">
-
       <div class="chart-heading mb-6">
         <h2 class="text-lg font-semibold">
           {{ localization.text('github.codeActivity') }}
@@ -153,15 +132,9 @@
       </div>
 
       <div class="relative h-72 w-full">
-        <canvas
-          baseChart
-          [type]="'line'"
-          [data]="codeActivityData"
-          [options]="codeActivityOptions">
+        <canvas baseChart [type]="'line'" [data]="codeActivityData" [options]="codeActivityOptions">
         </canvas>
       </div>
-
     </ui-section-container>
-
   </ui-section-container>
 </section>

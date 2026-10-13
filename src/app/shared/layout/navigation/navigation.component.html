@@ -1,114 +1,138 @@
 <mat-drawer-container>
+  <!-- Mobile Side Menu -->
+  <mat-drawer #drawer mode="over" position="end" class="glass-drawer w-72 border-0">
+    <!-- Mobile menu button -->
+    <div class="fixed end-6 top-5 z-1000 md:hidden">
+      <button
+        mat-icon-button
+        class="glass-ghost-button"
+        (click)="drawer.toggle()"
+        [attr.aria-label]="localization.text('a11y.toggleNavigation')"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <nav
+      [attr.aria-label]="localization.text('a11y.mobileNavigation')"
+      class="flex h-full flex-col gap-2 pt-24 px-4"
+    >
+      @for (link of navLinks(); track link.id) {
+        <a
+          [attr.href]="'#' + link.id"
+          (click)="$event.preventDefault(); scrollToSection(link.id, drawer)"
+          [class.nav-link-active]="isActive(link.id)"
+          class="nav-link"
+        >
+          {{ link.label }}
+        </a>
+      }
+      <div
+        class="mt-4 flex flex-wrap items-center justify-center gap-3 border-t border-[rgba(var(--border-rgb),0.28)] pt-4"
+      >
+        <ui-theme-toggle [compact]="true"></ui-theme-toggle>
+      </div>
+    </nav>
+  </mat-drawer>
 
-      <!-- Mobile Side Menu -->
-      <mat-drawer #drawer mode="over" position="end" class="glass-drawer w-72 border-0">
+  <mat-drawer-content class="bg-transparent">
+    <!-- Mobile navigation: visible only below the md breakpoint -->
 
-            <!-- Mobile menu button -->
-            <div class="fixed end-6 top-5 z-1000 md:hidden">
+    <header [class.opacity-0]="drawer.opened" class="sticky top-0 z-40 pb-4 pt-2 md:hidden">
+      <!-- Mobile navbar container -->
+      <div
+        class="glass-panel nav-shell mx-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-2xl px-4 py-3 sm:px-6"
+      >
+        <!-- Logo + user information -->
+        <!-- Clicking prevents default anchor behavior and uses custom smooth scrolling -->
+        <a
+          href="#home"
+          (click)="$event.preventDefault(); scrollToSection('home')"
+          class="flex min-w-0 flex-1 items-center gap-3"
+        >
+          <!-- Displays generated initials (example: AB) -->
+          <span
+            class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[rgba(var(--brand-rgb),0.24)] text-sm font-semibold text-[hsl(var(--text-1))]"
+          >
+            {{ brandInitials() }}
+          </span>
 
-                  <button mat-icon-button class="glass-ghost-button" (click)="drawer.toggle()"
-                        [attr.aria-label]="localization.text('a11y.toggleNavigation')">
-                        <mat-icon>close</mat-icon>
-                  </button>
+          <div class="min-w-0">
+            <p class="m-0 truncate text-sm font-semibold tracking-tight text-[hsl(var(--text-1))]">
+              {{ basics()?.name ?? 'Portfolio' }}
+            </p>
+            <p
+              class="m-0 whitespace-normal break-words text-xs leading-tight text-[hsl(var(--text-2))]"
+            >
+              {{ basics()?.role ?? localization.text('common.role') }}
+            </p>
+          </div>
+        </a>
 
-            </div>
-            <nav [attr.aria-label]="localization.text('a11y.mobileNavigation')"
-                  class="flex h-full flex-col gap-2 pt-24 px-4">
-                  @for (link of navLinks(); track link.id) {
-                  <a [attr.href]="'#' + link.id" (click)="$event.preventDefault(); scrollToSection(link.id, drawer)"
-                        [class.nav-link-active]="isActive(link.id)" class="nav-link">
-                        {{ link.label }}
-                  </a>
-                  }
-                  <div class="mt-4 flex flex-wrap items-center justify-center gap-3 border-t border-[rgba(var(--border-rgb),0.28)] pt-4">
-                        <ui-theme-toggle [compact]="true"></ui-theme-toggle>
-                  </div>
-            </nav>
-      </mat-drawer>
+        <!-- Mobile menu button -->
+        <div class="flex shrink-0 items-center gap-2 md:hidden">
+          <ui-language-selector></ui-language-selector>
 
-      <mat-drawer-content class="bg-transparent">
+          <button
+            mat-icon-button
+            class="glass-ghost-button"
+            (click)="drawer.toggle()"
+            [attr.aria-label]="localization.text('a11y.toggleNavigation')"
+          >
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+      </div>
+    </header>
 
-            <!-- Mobile navigation: visible only below the md breakpoint -->
-
-            <header [class.opacity-0]="drawer.opened" class="sticky top-0 z-40 pb-4 pt-2 md:hidden">
-                  <!-- Mobile navbar container -->
-                  <div
-                        class="glass-panel nav-shell mx-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-2xl px-4 py-3 sm:px-6">
-                        <!-- Logo + user information -->
-                        <!-- Clicking prevents default anchor behavior and uses custom smooth scrolling -->
-                        <a href="#home" (click)="$event.preventDefault(); scrollToSection('home')"
-                              class="flex min-w-0 flex-1 items-center gap-3">
-
-                              <!-- Displays generated initials (example: AB) -->
-                              <span
-                                    class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-[rgba(var(--brand-rgb),0.24)] text-sm font-semibold text-[hsl(var(--text-1))]">
-                                    {{ brandInitials() }}
-                              </span>
-
-                              <div class="min-w-0">
-                                    <p class="m-0 truncate text-sm font-semibold tracking-tight text-[hsl(var(--text-1))]">
-                                          {{ basics()?.name ?? 'Portfolio' }}
-                                    </p>
-                                    <p class="m-0 whitespace-normal break-words text-xs leading-tight text-[hsl(var(--text-2))]">
-                                          {{ basics()?.role ?? localization.text('common.role') }}
-                                    </p>
-                              </div>
-                        </a>
-
-                        <!-- Mobile menu button -->
-                        <div class="flex shrink-0 items-center gap-2 md:hidden">
-                              <ui-language-selector></ui-language-selector>
-
-                              <button mat-icon-button class="glass-ghost-button" (click)="drawer.toggle()"
-                                    [attr.aria-label]="localization.text('a11y.toggleNavigation')">
-
-                                    <mat-icon>menu</mat-icon>
-
-                              </button>
-
-                        </div>
-                  </div>
-            </header>
-
-
-            <!-- Desktop navigation sidebar -->
-            <aside [attr.aria-label]="localization.text('a11y.primaryNavigation')"
-                  class="side-rail glass-panel fixed start-5 top-1/2 z-40 hidden w-20 -translate-y-1/2 flex-col items-center gap-3 rounded-2xl py-3 md:flex">
-                  <!-- Desktop logo -->
-                  <a href="#home" (click)="$event.preventDefault(); scrollToSection('home')" class="rail-logo"
-                        [attr.title]="localization.text('nav.home')">
-                        {{ brandInitials() }}
-                  </a>
-                  <!-- Child component responsible for changing theme -->
-                  <!-- compact=true tells it to use the small version -->
-                  <ui-theme-toggle [compact]="true"></ui-theme-toggle>
-                  <ui-language-selector></ui-language-selector>
-                  <!-- Visual separator -->
-                  <div class="h-px w-11 bg-[rgba(var(--border-rgb),0.35)]"></div>
-                  <!-- Desktop navigation links -->
-                  <nav [attr.aria-label]="localization.text('a11y.desktopNavigation')"
-                        class="flex w-full flex-col items-center gap-1 px-2">
-                        <!-- Loops through the navigation links array -->
-                        <!-- track link.id helps Angular optimize rendering -->
-                        @for (link of navLinks(); track link.id) {
-                        <!-- Creates one link for each navigation item -->
-                        <a [attr.href]="'#' + link.id" (click)="$event.preventDefault(); scrollToSection(link.id)"
-                              [class.rail-link-active]="isActive(link.id)" class="rail-link"
-                              [attr.aria-label]="link.label" [attr.title]="link.label">
-                                                      @if (link.icon && link.icon.startsWith('brand-')) {
-                                                        <mat-icon [svgIcon]="link.icon"></mat-icon>
-                                                      } @else {
-                                                        <mat-icon>{{ link.icon }}</mat-icon>
-                                                      }
-                                                      <!-- Text label comes from the navigation object -->
-                                                      <span class="rail-link-label">
-                                                            {{ link.label }}
-                                                      </span>
-                                                </a>
-                        }
-                  </nav>
-            </aside>
-      </mat-drawer-content>
-
-
+    <!-- Desktop navigation sidebar -->
+    <aside
+      [attr.aria-label]="localization.text('a11y.primaryNavigation')"
+      class="side-rail glass-panel fixed start-5 top-1/2 z-40 hidden w-20 -translate-y-1/2 flex-col items-center gap-3 rounded-2xl py-3 md:flex"
+    >
+      <!-- Desktop logo -->
+      <a
+        href="#home"
+        (click)="$event.preventDefault(); scrollToSection('home')"
+        class="rail-logo"
+        [attr.title]="localization.text('nav.home')"
+      >
+        {{ brandInitials() }}
+      </a>
+      <!-- Child component responsible for changing theme -->
+      <!-- compact=true tells it to use the small version -->
+      <ui-theme-toggle [compact]="true"></ui-theme-toggle>
+      <ui-language-selector></ui-language-selector>
+      <!-- Visual separator -->
+      <div class="h-px w-11 bg-[rgba(var(--border-rgb),0.35)]"></div>
+      <!-- Desktop navigation links -->
+      <nav
+        [attr.aria-label]="localization.text('a11y.desktopNavigation')"
+        class="flex w-full flex-col items-center gap-1 px-2"
+      >
+        <!-- Loops through the navigation links array -->
+        <!-- track link.id helps Angular optimize rendering -->
+        @for (link of navLinks(); track link.id) {
+          <!-- Creates one link for each navigation item -->
+          <a
+            [attr.href]="'#' + link.id"
+            (click)="$event.preventDefault(); scrollToSection(link.id)"
+            [class.rail-link-active]="isActive(link.id)"
+            class="rail-link"
+            [attr.aria-label]="link.label"
+            [attr.title]="link.label"
+          >
+            @if (link.icon && link.icon.startsWith('brand-')) {
+              <mat-icon [svgIcon]="link.icon"></mat-icon>
+            } @else {
+              <mat-icon>{{ link.icon }}</mat-icon>
+            }
+            <!-- Text label comes from the navigation object -->
+            <span class="rail-link-label">
+              {{ link.label }}
+            </span>
+          </a>
+        }
+      </nav>
+    </aside>
+  </mat-drawer-content>
 </mat-drawer-container>

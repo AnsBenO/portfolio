@@ -146,14 +146,14 @@ export class ResumePdfService {
       stack: [
         {
           text: [
-              {
-                  text: `${project.name}    `,
-                  style: 'projectName',
-                },
-                {
-                  text: `${this.formatDateRange(project.startDate, project.endDate)}  `,
-                  style: 'projectDate',
-                },
+            {
+              text: `${project.name}    `,
+              style: 'projectName',
+            },
+            {
+              text: `${this.formatDateRange(project.startDate, project.endDate)}  `,
+              style: 'projectDate',
+            },
           ],
         },
 

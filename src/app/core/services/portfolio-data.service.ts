@@ -274,7 +274,7 @@ export class PortfolioDataService {
     };
   }
 
-  get getPortfolioData(){
+  get getPortfolioData() {
     return this.dataState();
   }
 }

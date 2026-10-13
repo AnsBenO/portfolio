@@ -69,7 +69,8 @@ const ENGLISH = {
   'projects.personal': 'Personal Project',
   'achievements.eyebrow': 'Achievements',
   'achievements.title': 'Notable Wins',
-  'achievements.subtitle': 'Concrete outcomes delivered while investigating issues and shipping improvements.',
+  'achievements.subtitle':
+    'Concrete outcomes delivered while investigating issues and shipping improvements.',
   'achievements.impact': 'Impact',
   'achievements.close': 'Close',
   'contact.eyebrow': 'Contact',
@@ -118,7 +119,8 @@ const ENGLISH = {
   'skills.architectureAndDesign': 'Architecture and Design',
   'skills.architectureAndDesignSummary': 'Design principles used to shape scalable systems.',
   'skills.maintenanceAndTriaging': 'Maintenance and Triaging',
-  'skills.maintenanceAndTriagingSummary': 'Production issue handling and service reliability practices.',
+  'skills.maintenanceAndTriagingSummary':
+    'Production issue handling and service reliability practices.',
   'date.present': 'Present',
 } satisfies Record<string, string>;
 
@@ -168,7 +170,8 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'about.factLanguages': 'Langues',
     'experience.eyebrow': 'Carrière',
     'experience.title': 'Temps forts du parcours',
-    'experience.subtitle': 'Expériences récentes avec un impact mesurable sur les produits et l’ingénierie.',
+    'experience.subtitle':
+      'Expériences récentes avec un impact mesurable sur les produits et l’ingénierie.',
     'experience.summaryFallback': '{role} chez {company}',
     'projects.eyebrow': 'Réalisations',
     'projects.title': 'Projets',
@@ -178,7 +181,8 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'projects.personal': 'Projet personnel',
     'achievements.eyebrow': 'Réalisations',
     'achievements.title': 'Réussites marquantes',
-    'achievements.subtitle': 'Des résultats concrets obtenus en analysant des problèmes et en livrant des améliorations.',
+    'achievements.subtitle':
+      'Des résultats concrets obtenus en analysant des problèmes et en livrant des améliorations.',
     'achievements.impact': 'Impact',
     'achievements.close': 'Fermer',
     'contact.eyebrow': 'Contact',
@@ -213,13 +217,16 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'github.chartAdditions': 'Ajouts',
     'github.chartDeletions': 'Suppressions',
     'skills.programmingLanguages': 'Langages de programmation',
-    'skills.programmingLanguagesSummary': 'Langages principaux utilisés pour livrer des logiciels en production.',
+    'skills.programmingLanguagesSummary':
+      'Langages principaux utilisés pour livrer des logiciels en production.',
     'skills.backend': 'Backend',
-    'skills.backendSummary': 'Compétences en API, plateformes et tests pour le développement côté serveur.',
+    'skills.backendSummary':
+      'Compétences en API, plateformes et tests pour le développement côté serveur.',
     'skills.frontend': 'Frontend',
     'skills.frontendSummary': "Frameworks d'interface et modèles de rendu.",
     'skills.databases': 'Bases de données',
-    'skills.databasesSummary': 'Modélisation des données et technologies de persistance relationnelle.',
+    'skills.databasesSummary':
+      'Modélisation des données et technologies de persistance relationnelle.',
     'skills.devOpsAndTools': 'DevOps et outils',
     'skills.devOpsAndToolsSummary': "Automatisation, infrastructure et outils d'exploitation.",
     'skills.projectManagement': 'Gestion de projet',
@@ -227,7 +234,8 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'skills.architectureAndDesign': 'Architecture et conception',
     'skills.architectureAndDesignSummary': 'Principes de conception de systèmes évolutifs.',
     'skills.maintenanceAndTriaging': 'Maintenance et diagnostic',
-    'skills.maintenanceAndTriagingSummary': 'Gestion des incidents en production et fiabilité des services.',
+    'skills.maintenanceAndTriagingSummary':
+      'Gestion des incidents en production et fiabilité des services.',
     'date.present': 'Aujourd’hui',
   },
   ar: {
@@ -391,7 +399,8 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'achievements.close': 'Cerrar',
     'contact.eyebrow': 'Contacto',
     'contact.title': 'Conectemos',
-    'contact.subtitle': 'Escríbeme por correo o redes sociales para explorar oportunidades de colaboración.',
+    'contact.subtitle':
+      'Escríbeme por correo o redes sociales para explorar oportunidades de colaboración.',
     'contact.email': 'Correo electrónico',
     'contact.location': 'Ubicación',
     'contact.startConversation': 'Iniciar una conversación',
@@ -421,9 +430,11 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'github.chartAdditions': 'Adiciones',
     'github.chartDeletions': 'Eliminaciones',
     'skills.programmingLanguages': 'Lenguajes de programación',
-    'skills.programmingLanguagesSummary': 'Lenguajes principales utilizados para entregar software en producción.',
+    'skills.programmingLanguagesSummary':
+      'Lenguajes principales utilizados para entregar software en producción.',
     'skills.backend': 'Backend',
-    'skills.backendSummary': 'Capacidades de API, plataformas y pruebas para desarrollo del servidor.',
+    'skills.backendSummary':
+      'Capacidades de API, plataformas y pruebas para desarrollo del servidor.',
     'skills.frontend': 'Frontend',
     'skills.frontendSummary': 'Frameworks de interfaz de usuario y patrones de renderizado.',
     'skills.databases': 'Bases de datos',
@@ -435,7 +446,8 @@ const TRANSLATIONS: Record<Locale, Record<TranslationKey, string>> = {
     'skills.architectureAndDesign': 'Arquitectura y diseño',
     'skills.architectureAndDesignSummary': 'Principios de diseño para crear sistemas escalables.',
     'skills.maintenanceAndTriaging': 'Mantenimiento y diagnóstico',
-    'skills.maintenanceAndTriagingSummary': 'Gestión de incidencias de producción y fiabilidad del servicio.',
+    'skills.maintenanceAndTriagingSummary':
+      'Gestión de incidencias de producción y fiabilidad del servicio.',
     'date.present': 'Actualidad',
   },
 };
@@ -468,9 +480,8 @@ export class LocalizationService {
   }
 
   text(key: TranslationKey, parameters: Record<string, string | number> = {}): string {
-    return TRANSLATIONS[this.locale()][key].replace(
-      /\{(\w+)\}/g,
-      (_placeholder, name: string) => String(parameters[name] ?? ''),
+    return TRANSLATIONS[this.locale()][key].replace(/\{(\w+)\}/g, (_placeholder, name: string) =>
+      String(parameters[name] ?? ''),
     );
   }
 

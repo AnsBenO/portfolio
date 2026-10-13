@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "format": "prettier --write \"src/**/*.{ts,html,scss,json}\"",
     "test": "ng test"
   },
   "prettier": {
@@ -35,11 +36,11 @@
     "@tailwindcss/postcss": "^4.3.3",
     "chart.js": "^4.3.0",
     "ng2-charts": "^10.0.0",
+    "pdfmake": "^0.3.3",
     "postcss": "^8.5.25",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.3.3",
-    "tslib": "^2.3.0",
-    "pdfmake": "^0.3.3"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular/build": "^21.1.4",
@@ -47,6 +48,7 @@
     "@angular/compiler-cli": "^21.1.0",
     "@types/pdfmake": "^0.3.3",
     "jsdom": "^27.1.0",
+    "prettier": "^3.9.10",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }

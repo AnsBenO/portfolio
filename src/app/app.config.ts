@@ -16,6 +16,7 @@ export const appConfig: ApplicationConfig = {
         anchorScrolling: 'enabled',
       }),
       withViewTransitions(),
-    ), provideCharts(withDefaultRegisterables()),
+    ),
+    provideCharts(withDefaultRegisterables()),
   ],
 };

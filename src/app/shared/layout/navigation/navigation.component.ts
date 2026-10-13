@@ -38,7 +38,6 @@ const NAV_LINKS: NavLink[] = [
   templateUrl: './navigation.component.html',
 })
 export class NavigationComponent {
-  
   protected readonly sectionSpy = inject(SectionSpyService);
   protected readonly localization = inject(LocalizationService);
   private readonly portfolioData = inject(PortfolioDataService);
@@ -63,12 +62,11 @@ export class NavigationComponent {
     return initials || 'PF';
   });
 
-  protected readonly navLinks = computed(
-    () =>
-      NAV_LINKS.map((link) => ({
-        ...link,
-        label: this.localization.text(link.label),
-      })),
+  protected readonly navLinks = computed(() =>
+    NAV_LINKS.map((link) => ({
+      ...link,
+      label: this.localization.text(link.label),
+    })),
   );
 
   protected isActive(sectionId: string): boolean {

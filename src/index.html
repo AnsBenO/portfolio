@@ -1,48 +1,52 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfolio</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="code-svgrepo-com.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+      (() => {
+        const storageKey = 'theme-preference';
+        const paletteStorageKey = 'theme-palette';
+        const localeStorageKey = 'ui-locale';
+        const storedTheme = localStorage.getItem(storageKey);
+        const storedPalette = localStorage.getItem(paletteStorageKey);
+        const storedLocale = localStorage.getItem(localeStorageKey);
+        const palettes = ['ocean', 'forest', 'amber', 'violet'];
+        const locales = ['en', 'fr', 'ar', 'es'];
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let resolvedTheme = prefersDark ? 'dark' : 'light';
+        const resolvedPalette = palettes.includes(storedPalette) ? storedPalette : 'ocean';
+        const resolvedLocale = locales.includes(storedLocale) ? storedLocale : 'en';
 
-<head>
-  <meta charset="utf-8">
-  <title>Portfolio</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="code-svgrepo-com.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script>
-    (() => {
-      const storageKey = 'theme-preference';
-      const paletteStorageKey = 'theme-palette';
-      const localeStorageKey = 'ui-locale';
-      const storedTheme = localStorage.getItem(storageKey);
-      const storedPalette = localStorage.getItem(paletteStorageKey);
-      const storedLocale = localStorage.getItem(localeStorageKey);
-      const palettes = ['ocean', 'forest', 'amber', 'violet'];
-      const locales = ['en', 'fr', 'ar', 'es'];
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      let resolvedTheme = prefersDark ? 'dark' : 'light';
-      const resolvedPalette = palettes.includes(storedPalette) ? storedPalette : 'ocean';
-      const resolvedLocale = locales.includes(storedLocale) ? storedLocale : 'en';
+        if (storedTheme === 'dark' || storedTheme === 'light') {
+          resolvedTheme = storedTheme;
+        }
 
-      if (storedTheme === 'dark' || storedTheme === 'light') {
-        resolvedTheme = storedTheme;
-      }
+        document.documentElement.classList.toggle('dark', resolvedTheme === 'dark');
+        document.documentElement.dataset.theme = resolvedTheme;
+        document.documentElement.dataset.palette = resolvedPalette;
+        document.documentElement.style.colorScheme = resolvedTheme;
+        document.documentElement.lang = resolvedLocale;
+        document.documentElement.dir = resolvedLocale === 'ar' ? 'rtl' : 'ltr';
+      })();
+    </script>
+  </head>
 
-      document.documentElement.classList.toggle('dark', resolvedTheme === 'dark');
-      document.documentElement.dataset.theme = resolvedTheme;
-      document.documentElement.dataset.palette = resolvedPalette;
-      document.documentElement.style.colorScheme = resolvedTheme;
-      document.documentElement.lang = resolvedLocale;
-      document.documentElement.dir = resolvedLocale === 'ar' ? 'rtl' : 'ltr';
-    })();
-  </script>
-</head>
-
-<body>
-  <app-root></app-root>
-</body>
-
+  <body>
+    <app-root></app-root>
+  </body>
 </html>
