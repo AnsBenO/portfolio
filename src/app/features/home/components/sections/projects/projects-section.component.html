@@ -27,7 +27,7 @@
         </span>
       </div>
 
-      <div class="grid grid-cols-1 gap-8 xl:grid-cols-2">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         @for (project of projects(); track project.id) {
           <content-project-card [project]="project" featured="true"> </content-project-card>
         }
