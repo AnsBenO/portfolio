@@ -87,6 +87,8 @@ export class ThemeToggleComponent {
         return this.localization.text('palette.ocean');
       case 'forest':
         return this.localization.text('palette.forest');
+      case 'amber':
+        return this.localization.text('palette.amber');
       case 'violet':
         return this.localization.text('palette.violet');
     }

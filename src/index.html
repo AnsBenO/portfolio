@@ -20,7 +20,7 @@
       const storedTheme = localStorage.getItem(storageKey);
       const storedPalette = localStorage.getItem(paletteStorageKey);
       const storedLocale = localStorage.getItem(localeStorageKey);
-      const palettes = ['ocean', 'forest', 'violet'];
+      const palettes = ['ocean', 'forest', 'amber', 'violet'];
       const locales = ['en', 'fr', 'ar', 'es'];
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       let resolvedTheme = prefersDark ? 'dark' : 'light';

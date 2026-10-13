@@ -15,11 +15,11 @@ describe('ThemeService', () => {
   });
 
   it('loads a supported palette preference from local storage', () => {
-    localStorage.setItem('theme-palette', 'violet');
+    localStorage.setItem('theme-palette', 'amber');
 
     const theme = TestBed.inject(ThemeService);
 
-    expect(theme.palette()).toBe('violet');
+    expect(theme.palette()).toBe('amber');
   });
 
   it('ignores an unsupported stored palette', () => {

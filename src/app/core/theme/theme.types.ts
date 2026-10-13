@@ -3,6 +3,7 @@ export type ThemePreference = 'light' | 'dark' | 'system';
 export const THEME_PALETTES = [
   { id: 'ocean', label: 'Ocean', icon: 'waves' },
   { id: 'forest', label: 'Forest', icon: 'forest' },
+  { id: 'amber', label: 'Amber', icon: 'wb_sunny' },
   { id: 'violet', label: 'Violet', icon: 'flare' },
 ] as const;
 
